@@ -1,0 +1,9 @@
+<MyRepository>
+ .idea/
+        Educational practice.iml
+        src/
+        task1/
+<MyRepository>
+ New Text Document.txt
+        src/
+        task1/
