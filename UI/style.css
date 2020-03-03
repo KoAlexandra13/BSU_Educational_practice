@@ -210,6 +210,15 @@ fieldset{
     color: gray;
     font-style: italic;
 }
+.like-button, .change-post-button, .delete-post-button{
+    background: white;
+    border: none;
+    outline: none;
+}
+.delete-post-button{
+    margin-left: -15%;
+    margin-top: 6%;
+}
 
 
 
