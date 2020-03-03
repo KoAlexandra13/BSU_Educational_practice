@@ -228,8 +228,8 @@ fieldset{
         width: 95%;
     }
 }
-
-
-
-
-
+@media only screen and (max-width: 500px) {
+    .user-post, .other-post, .make-new-post-area, .filter-area{
+        width: 90%;
+    }
+}
