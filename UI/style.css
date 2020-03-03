@@ -129,11 +129,6 @@ footer .footer-content {
     height: 2em;
     margin-left: 39%;
 }
-.add-photo{
-    width: 25px;
-    padding-left: 7px;
-    margin-bottom: auto;
-}
 .action-area{
     display: flex;
 }
@@ -159,7 +154,7 @@ fieldset{
 }
 .filter-container{
     padding-bottom: -10px;
-    <!--display: none;-->
+    /*display: none;*/
 }
 .filter-textarea{
     resize: none;
@@ -191,11 +186,9 @@ fieldset{
 }
 .action-container{
     display: flex;
-    vertical-align: middle;
     margin-left: auto;
 }
 .post-info{
-    vertical-align: middle;
     display: flex;
     padding-bottom: -5%;
 }
@@ -204,7 +197,7 @@ fieldset{
     font-style: italic;
     font-size: small;
 }
-.delete-icon, .change-icon{
+.delete-icon, .change-icon, .add-photo{
     width: 25px;
 }
 .username{
