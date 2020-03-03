@@ -91,9 +91,10 @@ footer .footer-content {
     border: 1px solid deepskyblue;
 }
 
-.column{
+.column-1, .column-2{
     display: inline-block;
 }
+
 .user-photo{
     border-radius: 50%;
     width: 80px;
@@ -158,7 +159,7 @@ fieldset{
 }
 .filter-container{
     padding-bottom: -10px;
-    display: none;
+    <!--display: none;-->
 }
 .filter-textarea{
     resize: none;
@@ -219,6 +220,15 @@ fieldset{
     margin-left: -15%;
     margin-top: 6%;
 }
+@media only screen and (max-width: 1000px) {
+    .column-1, .column-2{
+        display: grid;
+    }
+    .user-post, .other-post, .make-new-post-area, .filter-area{
+        width: 95%;
+    }
+}
+
 
 
 
