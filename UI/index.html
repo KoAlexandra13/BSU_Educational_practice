@@ -15,19 +15,18 @@
                 </a>
             </div>
 
-            <h3  class="inline-block" style="color: gray; font-family: Times New Roman, serif;
-            font-style: italic; margin-top: 8px;"> @username </h3>
+            <h3  class="inline-block" id="username-in-header"> @username </h3>
 
             <div class="right-block">
                 <label>
                     <input class="search" type="search" placeholder=" #tags...">
                 </label>
                 <a href="#" class="new-post" title="New post">
-                    <img class="header_icons" src="img/add-post.png" title="Profile" alt="Add new post">
+                    <img class="header-icons" src="img/add-post.png" title="Profile" alt="Add new post">
                 </a>
-                <a href="#" class="log-out" title="Log out">
-                    <img class="header_icons" src="img/log-out.png" title="Log out" alt="Log out">
-                </a>
+                <button class="log-out-button">
+                    <img class="header-icons" src="img/log-out.png" title="Log out" alt="Log out">
+                </button>
             </div>
         </div>
     </header>
@@ -35,11 +34,11 @@
     <main class="posts-container">
         <div class="make-new-post-area">
             <form>
-                <div class="column-1" >
+                <div class="column-1">
                     <img class="user-photo" src="photos/user-photo.jpg" alt="User photo" >
                 </div>
 
-                <div class="column-2" style="width: 90%">
+                <div class="column-2">
                     <div class="post-text">
                         <label>
                             <textarea class="new-post-textarea" placeholder="The text of your post..."
@@ -53,7 +52,7 @@
                             </a>
                         </div>
                         <div class="add-new-post">
-                            <button class="add-post-button" style="height: 103%"><strong>Add</strong></button>
+                            <button class="add-post-button"><strong>Add</strong></button>
                         </div>
                     </div>
                 </div>
@@ -79,19 +78,19 @@
         </div>
 
         <article class="user-post">
-            <div class="column-1" style="width: 9%; vertical-align: top">
+            <div class="column-with-user-photo">
                 <img class="user-photo" src="photos/user-photo.jpg" alt="User photo">
             </div>
-            <div class="column-2" style="width: 88%">
+            <div class="column-2">
                 <div class="post-info">
-                    <div class="username" style="margin-top: -1%">
+                    <div class="username-container">
                         <h4 class="username">@username</h4>
                     </div>
                     <div class="date-and-time">
                         <p>12:30 02.03.20</p>
                     </div>
                 </div>
-                <div class="post-text"  style="width: 85%; margin-top: -3%">
+                <div class="post-text">
                     <p>
                         A man from Australia has a snake. He feeds it a rat. He holds the rat with tongs.
                         The snake eats the tongs, too. This is dangerous for the snake. Doctors operate on it.
@@ -100,7 +99,7 @@
                         #snake
                     </p>
                 </div>
-                <div class="action-area" style="width: 100%">
+                <div class="action-area">
                     <div class="like">
                         <button class="like-button">
                             <img class="add-like" src="img/like.png" alt="Like" >
@@ -109,12 +108,12 @@
                     <div class="action-container">
                         <div class="change-post">
                             <button class="change-post-button">
-                                <img class="change-icon" style="width: 25px" src="img/add-post.png" alt="Change post" >
+                                <img class="change-icon" src="img/add-post.png" alt="Change post" >
                             </button>
                         </div>
-                        <div class="delete-post" style="margin-top: -5%;">
+                        <div class="delete-post">
                             <button class="delete-post-button">
-                                <img class="delete-icon" style="width: 24px;  margin-top: -5%;" src="img/delete.png" alt="Delete post" >
+                                <img class="delete-icon" src="img/delete.png" alt="Delete post" >
                             </button>
                         </div>
                     </div>
@@ -123,19 +122,19 @@
         </article>
 
         <article class="other-post">
-            <div class="column-1" style="width: 9%; vertical-align: top">
+            <div class="column-with-user-photo">
                 <img class="user-photo" src="photos/dog.jpg" alt="User photo">
             </div>
-            <div class="column-2" style="width: 88%">
+            <div class="column-2">
                 <div class="post-info">
-                    <div class="username" style="margin-top: -1%">
+                    <div class="username-container">
                         <h4 class="username">@dog_robbi</h4>
                     </div>
                     <div class="date-and-time">
                         <p>14:23 27.02.20</p>
                     </div>
                 </div>
-                <div class="post-text"  style="width: 85%; margin-top: -3%">
+                <div class="post-text">
                     <p>
                         Hello students, there is a group on Facebook.
                         This group is for all students and teachers of English who use newsinlevels.com.
@@ -143,7 +142,7 @@
                         #english
                     </p>
                 </div>
-                <div class="action-area" style="width: 100%">
+                <div class="action-area">
                     <div class="like">
                         <button class="like-button">
                             <img class="add-like" src="img/like.png" alt="Like" >
@@ -154,19 +153,19 @@
         </article>
 
         <article class="other-post">
-            <div class="column-1" style="width: 9%; vertical-align: top">
+            <div class="column-with-user-photo">
                 <img class="user-photo" src="photos/fish.jpg" alt="User photo">
             </div>
-            <div class="column-2" style="width: 88%">
+            <div class="column-2">
                 <div class="post-info">
-                    <div class="username" style="margin-top: -1%">
+                    <div class="username-container">
                         <h4 class="username">@japan_fish</h4>
                     </div>
                     <div class="date-and-time">
                         <p>11:09 25.02.20</p>
                     </div>
                 </div>
-                <div class="post-text"  style="width: 85%; margin-top: -3%">
+                <div class="post-text">
                     <p>
                         This year, there are the Olympics in Tokyo, Japan. Tokyo is the capital city of Japan.
                         The coronavirus is in Japan. Japanese officials say that 100 people are ill.
@@ -174,7 +173,7 @@
                         #olimpics
                     </p>
                 </div>
-                <div class="action-area" style="width: 100%">
+                <div class="action-area">
                     <div class="like">
                         <button class="like-button">
                             <img class="add-like" src="img/like.png" alt="Like" >
@@ -185,19 +184,19 @@
         </article>
 
         <article class="user-post">
-            <div class="column-1" style="width: 9%; vertical-align: top">
+            <div class="column-with-user-photo">
                 <img class="user-photo" src="photos/user-photo.jpg" alt="User photo">
             </div>
-            <div class="column-2" style="width: 88%">
+            <div class="column-2">
                 <div class="post-info">
-                    <div class="username" style="margin-top: -1%">
+                    <div class="username-container">
                         <h4 class="username">@username</h4>
                     </div>
                     <div class="date-and-time">
                         <p>7:30 22.02.20</p>
                     </div>
                 </div>
-                <div class="post-text"  style="width: 85%; margin-top: -3%">
+                <div class="post-text">
                     <p>
                         A hairdresser has an idea. He makes a picture on somebody’s head.
                         The picture looks like a famous person. Now, many people know about the hairdresser.
@@ -205,7 +204,7 @@
                         #hairdresser
                     </p>
                 </div>
-                <div class="action-area" style="width: 100%">
+                <div class="action-area">
                     <div class="like">
                         <button class="like-button">
                             <img class="add-like" src="img/like.png" alt="Like" >
@@ -214,12 +213,12 @@
                     <div class="action-container">
                         <div class="change-post">
                             <button class="change-post-button">
-                                <img class="change-icon" style="width: 25px" src="img/add-post.png" alt="Change post" >
+                                <img class="change-icon" src="img/add-post.png" alt="Change post" >
                             </button>
                         </div>
-                        <div class="delete-post" style="margin-top: -5%;">
+                        <div class="delete-post">
                             <button class="delete-post-button">
-                                <img class="delete-icon" style="width: 24px;  margin-top: -5%;" src="img/delete.png" alt="Delete post" >
+                                <img class="delete-icon" src="img/delete.png" alt="Delete post" >
                             </button>
                         </div>
                     </div>
@@ -228,19 +227,19 @@
         </article>
 
         <article class="other-post">
-            <div class="column-1" style="width: 9%; vertical-align: top">
+            <div class="column-1">
                 <img class="user-photo" src="photos/fish.jpg" alt="User photo">
             </div>
-            <div class="column-2" style="width: 88%">
+            <div class="column-2">
                 <div class="post-info">
-                    <div class="username" style="margin-top: -1%">
+                    <div class="username">
                         <h4 class="username">@japan_fish</h4>
                     </div>
                     <div class="date-and-time">
                         <p>15:29 16.02.20</p>
                     </div>
                 </div>
-                <div class="post-text"  style="width: 85%; margin-top: -3%">
+                <div class="post-text">
                     <p>
                         A man attacks two bars in Hanau, Germany. The city has 100,000 people.
                         It lies about 12 miles from Frankfurt, Germany.
@@ -249,7 +248,7 @@
                         #Germany
                     </p>
                 </div>
-                <div class="action-area" style="width: 100%">
+                <div class="action-area">
                     <div class="like">
                         <button class="like-button">
                             <img class="add-like" src="img/like.png" alt="Like" >
@@ -260,26 +259,26 @@
         </article>
 
         <article class="user-post">
-            <div class="column-1" style="width: 9%; vertical-align: top">
+            <div class="column-with-user-photo">
                 <img class="user-photo" src="photos/user-photo.jpg" alt="User photo">
             </div>
-            <div class="column-2" style="width: 88%">
+            <div class="column-2">
                 <div class="post-info">
-                    <div class="username" style="margin-top: -1%">
+                    <div class="username-container">
                         <h4 class="username">@username</h4>
                     </div>
                     <div class="date-and-time">
                         <p>17:30 13.02.20</p>
                     </div>
                 </div>
-                <div class="post-text"  style="width: 85%; margin-top: -3%">
+                <div class="post-text">
                     <p>
                         Last weekend, a big storm hits the UK. Wales and Southern England have a lot of problems.
                         There is heavy rain. There is more rain in two days than in the whole month.<br>
                         #hstorm #UK
                     </p>
                 </div>
-                <div class="action-area" style="width: 100%">
+                <div class="action-area">
                     <div class="like">
                         <button class="like-button">
                             <img class="add-like" src="img/like.png" alt="Like" >
@@ -288,12 +287,12 @@
                     <div class="action-container">
                         <div class="change-post">
                             <button class="change-post-button">
-                                <img class="change-icon" style="width: 25px" src="img/add-post.png" alt="Change post" >
+                                <img class="change-icon" src="img/add-post.png" alt="Change post" >
                             </button>
                         </div>
-                        <div class="delete-post" style="margin-top: -5%;">
+                        <div class="delete-post">
                             <button class="delete-post-button">
-                                <img class="delete-icon" style="width: 24px;  margin-top: -5%;" src="img/delete.png" alt="Delete post" >
+                                <img class="delete-icon" src="img/delete.png" alt="Delete post" >
                             </button>
                         </div>
                     </div>
@@ -302,19 +301,19 @@
         </article>
 
         <article class="other-post">
-            <div class="column-1" style="width: 9%; vertical-align: top">
+            <div class="column-with-user-photo">
                 <img class="user-photo" src="photos/dog.jpg" alt="User photo">
             </div>
-            <div class="column-2" style="width: 88%">
+            <div class="column-2">
                 <div class="post-info">
-                    <div class="username" style="margin-top: -1%">
+                    <div class="username-container">
                         <h4 class="username">@dog_robbi</h4>
                     </div>
                     <div class="date-and-time">
                         <p>21:21 10.02.20</p>
                     </div>
                 </div>
-                <div class="post-text"  style="width: 85%; margin-top: -3%">
+                <div class="post-text">
                     <p>
                         Some people go to Chernobyl. It is in Ukraine. They see a fox. One person films the fox.
                         The fox is not afraid of the people. They give it some bread.
@@ -322,7 +321,7 @@
                         #animal #funny #fox
                     </p>
                 </div>
-                <div class="action-area" style="width: 100%">
+                <div class="action-area">
                     <div class="like">
                         <button class="like-button">
                             <img class="add-like" src="img/like.png" alt="Like" >
@@ -333,19 +332,19 @@
         </article>
 
         <article class="user-post">
-            <div class="column-1" style="width: 9%; vertical-align: top">
+            <div class="column-with-user-photo">
                 <img class="user-photo" src="photos/user-photo.jpg" alt="User photo">
             </div>
-            <div class="column-2" style="width: 88%">
+            <div class="column-2">
                 <div class="post-info">
-                    <div class="username" style="margin-top: -1%">
+                    <div class="username-container">
                         <h4 class="username">@username</h4>
                     </div>
                     <div class="date-and-time">
                         <p>5:30 05.02.20</p>
                     </div>
                 </div>
-                <div class="post-text"  style="width: 85%; margin-top: -3%">
+                <div class="post-text">
                     <p>
                         Scientists study penguins in Antarctica. They find out that the number of penguins goes down.
                         Some populations go down by more than 75% in the last 50 years. The situation is very serious.
@@ -354,7 +353,7 @@
                         #peguins #Antarctica
                     </p>
                 </div>
-                <div class="action-area" style="width: 100%">
+                <div class="action-area">
                     <div class="like">
                         <button class="like-button">
                             <img class="add-like" src="img/like.png" alt="Like" >
@@ -363,12 +362,12 @@
                     <div class="action-container">
                         <div class="change-post">
                             <button class="change-post-button">
-                                <img class="change-icon" style="width: 25px" src="img/add-post.png" alt="Change post" >
+                                <img class="change-icon" src="img/add-post.png" alt="Change post" >
                             </button>
                         </div>
-                        <div class="delete-post" style="margin-top: -5%;">
+                        <div class="delete-post">
                             <button class="delete-post-button">
-                                <img class="delete-icon" style="width: 24px;  margin-top: -5%;" src="img/delete.png" alt="Delete post" >
+                                <img class="delete-icon" src="img/delete.png" alt="Delete post" >
                             </button>
                         </div>
                     </div>
@@ -377,19 +376,19 @@
         </article>
 
         <article class="other-post">
-            <div class="column-1" style="width: 9%; vertical-align: top">
+            <div class="column-with-user-photo">
                 <img class="user-photo" src="photos/dog.jpg" alt="User photo">
             </div>
-            <div class="column-2" style="width: 88%">
+            <div class="column-2">
                 <div class="post-info">
-                    <div class="username" style="margin-top: -1%">
+                    <div class="username-container">
                         <h4 class="username">@dog_robbi</h4>
                     </div>
                     <div class="date-and-time">
                         <p>4:00 04.02.20</p>
                     </div>
                 </div>
-                <div class="post-text"  style="width: 85%; margin-top: -3%">
+                <div class="post-text">
                     <p>
                         Last month, the US kills an important Iranian general. Iran does not like this.
                         Iran attacks a US military base in Iraq.
@@ -398,7 +397,7 @@
                         #US
                     </p>
                 </div>
-                <div class="action-area" style="width: 100%">
+                <div class="action-area">
                     <div class="like">
                         <button class="like-button">
                             <img class="add-like" src="img/like.png" alt="Like" >
@@ -409,19 +408,19 @@
         </article>
 
         <article class="other-post">
-            <div class="column-1" style="width: 9%; vertical-align: top">
+            <div class="column-with-user-photo">
                 <img class="user-photo" src="photos/fish.jpg" alt="User photo">
             </div>
-            <div class="column-2" style="width: 88%">
+            <div class="column-2">
                 <div class="post-info">
-                    <div class="username" style="margin-top: -1%">
+                    <div class="username-container">
                         <h4 class="username">@japan_fish</h4>
                     </div>
                     <div class="date-and-time">
                         <p>1:29 01.02.20</p>
                     </div>
                 </div>
-                <div class="post-text"  style="width: 85%; margin-top: -3%">
+                <div class="post-text">
                     <p>
                         This news is from Peru. Experts work on a church. It is a very old church.
                         They want to make it nice again. During the work, they find something.
@@ -431,7 +430,7 @@
                         #Peru #bones
                     </p>
                 </div>
-                <div class="action-area" style="width: 100%">
+                <div class="action-area">
                     <div class="like">
                         <button class="like-button">
                             <img class="add-like" src="img/like.png" alt="Like" >
@@ -450,7 +449,7 @@
     <footer>
         <div class="footer-content">
             <p>&copy;Odacova,Inc.,2020&emsp;Alexandra Kornievich&emsp;2 grade 7 group
-                &emsp;kosasha998@gmail.com&emsp;03.03.2020</p>
+                &emsp;kosasha998@gmail.com&emsp;09.03.2020</p>
         </div>
     </footer>
 </body>

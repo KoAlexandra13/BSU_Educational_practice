@@ -4,7 +4,6 @@ body {
     padding: 0;
     margin: 0;
     color: #000000;
-    display: block;
 }
 body, html {
     height: 100%;
@@ -51,10 +50,16 @@ footer{
     float: right;
 }
 
-.header_icons{
+.header-icons{
     width: 30px;
     padding-left: 10px;
     vertical-align: middle;
+}
+#username-in-header{
+    color: gray;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    margin-top: 8px;
 }
 .search{
     border-radius: 50px;
@@ -91,10 +96,26 @@ footer .footer-content {
     border: 1px solid deepskyblue;
 }
 
-.column-1, .column-2{
+.column-1, .column-2, .column-with-user-photo{
     display: inline-block;
 }
-
+.column-2{
+    width: 88%;
+}
+.column-1{
+    width: 9%;
+}
+.column-with-user-photo{
+    width: 9%;
+    vertical-align: top;
+}
+.username-container{
+    margin-top: -1%;
+}
+.post-text{
+    width: 85%;
+    margin-top: -3%;
+}
 .user-photo{
     border-radius: 50%;
     width: 80px;
@@ -115,6 +136,9 @@ footer .footer-content {
     margin-left: auto;
     margin-top: 5px;
 }
+.add-post-button{
+    height: 103%;
+}
 .add-post-button, .load-more-button{
     border-radius: 50px;
     width: 100%;
@@ -122,12 +146,14 @@ footer .footer-content {
     background-color: deepskyblue;
     color: white;
     text-align: center;
+    outline: none;
 }
 .load-more-button{
     width: 20%;
     margin-top: 20px;
     height: 2em;
     margin-left: 39%;
+    outline: none;
 }
 .action-area{
     display: flex;
@@ -197,14 +223,21 @@ fieldset{
     font-style: italic;
     font-size: small;
 }
-.delete-icon, .change-icon, .add-photo{
+.change-icon, .add-photo{
     width: 25px;
+}
+.delete-icon{
+    width: 24px;
+    margin-top: -5%;
+}
+.delete-post{
+    margin-top: -5%;
 }
 .username{
     color: gray;
     font-style: italic;
 }
-.like-button, .change-post-button, .delete-post-button{
+.like-button, .change-post-button, .delete-post-button, .log-out-button{
     background: white;
     border: none;
     outline: none;
