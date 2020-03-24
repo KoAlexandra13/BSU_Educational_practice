@@ -225,8 +225,9 @@ let posts = [
          filterPosts = filterPosts.filter(post => {
              let tmp = [];
              tmp = filterParams.tags.filter(tag => post.tags.includes(tag));
-             if(tmp.length !== 0)
+             if(tmp.length !== 0) {
                  return true;
+             }
          });
      }
 
@@ -263,8 +264,9 @@ function validatePost(post){
 function addPost(newPost) {
      if(validatePost(newPost)){
          for(let post of posts){
-             if(post.id === newPost.id)
+             if(post.id === newPost.id) {
                  return false;
+             }
          }
          posts.push(newPost);
          return true;
