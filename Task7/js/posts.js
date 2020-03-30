@@ -66,7 +66,6 @@ class PostsCollection{
     get(id) {
         this._posts.forEach(post => {
             if (id === post.id) {
-                console.log(post);
                 return post;
             }
         });
@@ -117,11 +116,12 @@ class PostsCollection{
         return (post.id && (typeof post.id === "string") && post.id !== '' &&
             post.description && (typeof post.description === "string") && post.description !== '' &&
             post.description.length < 200 && post.author && (typeof post.id === "string") && post.author !== '' &&
-            (post.createAt instanceof Date) && (typeof post.photoLink === "string"));
+            (post.createAt instanceof Date) && (typeof post.photoLink === "string") && (post.tags instanceof Array) &&
+            (post.likes instanceof Array));
     }
 
     clear() {
-        this._posts.forEach(post => this.remove(post));
+        this._posts = [];
     }
 
     addAll(postsArray) {
