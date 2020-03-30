@@ -7,9 +7,7 @@ class PostsCollection{
         let filterPosts = this._posts;
         let filterParamsProps = Object.keys(filterParams);
         filterParamsProps.forEach(prop =>
-        {if (!(filterParams[prop] instanceof Array)){
-            filterPosts = filterPosts.filter(post => post[prop] === filterParams[prop])
-        } else {
+        {if (filterParams[prop] instanceof Array){
             filterPosts = filterPosts.filter(post => {
                 let tmp = [];
                 tmp = filterParams[prop].filter(tag => post[prop].includes(tag));
@@ -17,6 +15,10 @@ class PostsCollection{
                     return true;
                 }
             });
+        }else if(filterParams[prop] instanceof Date){
+            filterPosts = filterPosts.filter(post => post[prop].toDateString() === filterParams[prop].toDateString());
+        }else {
+            filterPosts = filterPosts.filter(post => post[prop] === filterParams[prop]);
         }
         });
         return filterPosts;
@@ -57,6 +59,7 @@ class PostsCollection{
             current++;
             postCount++;
         }
+        console.log(postsToReturn);
         return postsToReturn;
     }
 
