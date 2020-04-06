@@ -1,3 +1,4 @@
+
 posts =[
     {
         id : '1',
@@ -208,6 +209,7 @@ posts =[
 ];
 
 window.postsCollection.addAll(posts);
+window.postsCollection.getPage(0,20, {tags: ['#snake', '#english']});
 
 (function createPosts() {
     window.postsCollection.getPage().forEach(post => createPostHTML(post.author, post.createAt,

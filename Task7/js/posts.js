@@ -85,8 +85,7 @@ class PostsCollection{
 
     edit(id, changes) {
         let isEdit = false;
-        for (let i = 0; i < this._posts.length; i++){
-            let post = this._posts[i];
+        let i = this._posts.findIndex(post => {
             if (post.id === id) {
                 let changedPost = {};
                 for (let key in post) {
@@ -98,17 +97,17 @@ class PostsCollection{
                     isEdit = true;
                 }
             }
-        }
+        });
         return isEdit;
     }
 
     remove(id) {
-        for (let i = 0; i < this._posts.length; i++) {
-            if (this._posts[i].id === id) {
+        let i = this._posts.findIndex(post => {
+            if(post.id === id){
                 this._posts.splice(i, 1);
                 return true;
             }
-        }
+        });
         return false;
     }
 
