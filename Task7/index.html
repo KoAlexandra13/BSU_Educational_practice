@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Odacova</title>
+    <link rel="shortcut icon" type="image" href="img/logo-ico.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="inline-block">
+            <a href="#" class="go-to-homepage" title="Homepage">
+                <img id="logo"  src="img/logo.png" title="Homepage" alt="Logo">
+            </a>
+        </div>
+
+        <h3  class="inline-block" id="username-in-header">@username</h3>
+
+        <div class="right-block">
+            <label>
+                <input class="search" type="search" placeholder=" #tags...">
+            </label>
+            <a href="#" class="new-post" title="New post">
+                <img class="header-icons" src="img/add-post.png" title="Profile" alt="Add new post">
+            </a>
+            <button class="log-out-button">
+                <img class="header-icons" src="img/log-out.png" title="Log out" alt="Log out">
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="posts-container">
+    <div class="make-new-post-area">
+        <form>
+            <div class="column-1">
+                <img class="user-photo" src="photos/user-photo.jpg" alt="User photo" >
+            </div>
+
+            <div class="column-2">
+                <div class="post-text">
+                    <label>
+                            <textarea class="new-post-textarea" placeholder="The text of your post..."
+                                      maxlength="280" spellcheck="true"></textarea>
+                    </label>
+                </div>
+                <div class="action-area">
+                    <div class="add-photo-area">
+                        <a href="#" class="upload-a-photo" title="Upload a Photo">
+                            <img class="add-photo" src="img/add-image.png" alt="Add photo" >
+                        </a>
+                    </div>
+                    <div class="add-new-post">
+                        <button class="add-post-button"><strong>Add</strong></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="filter-area">
+        <div class="filter-content" >
+            <form>
+                <label>
+                    <fieldset>
+                        <legend>Filter by...</legend>
+                        <div class="filter-container" id="filter" onclick="displayFilter()">
+                            <textarea class="filter-textarea" placeholder=" username"></textarea>
+                            <textarea class="filter-textarea" placeholder=" #tag"></textarea>
+                            <textarea class="filter-textarea" placeholder=" dd-mm-yyyy"></textarea>
+                            <div>
+                                <button class="apply-button" onclick="addFilterParams()">Apply</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </label>
+            </form>
+        </div>
+    </div>
+
+    <div id="posts-area"></div>
+
+    <div class="load-more-posts">
+        <button class="load-more-button" ><strong>Load more</strong></button>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy;Odacova,Inc.,2020&emsp;Alexandra Kornievich&emsp;2 grade 7 group
+            &emsp;kosasha998@gmail.com&emsp;09.03.2020</p>
+    </div>
+</footer>
+<script src="js/posts.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
