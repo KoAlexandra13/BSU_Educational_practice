@@ -1,82 +1,48 @@
-class PostsCollection{
+const CREATION_COMPARATOR = (a, b) => b.createAt - a.createAt;
+const IMMUTABLE_KEYS = ['id', 'author', 'createAt'];
+
+class PostsCollection {
     constructor(initialPosts) {
         this._posts = (initialPosts || []);
     }
 
-    _filter(filterParams){
+    _filter(filterParams) {
         let filterPosts = this._posts;
-        let filterParamsProps = Object.keys(filterParams);
-        filterParamsProps.forEach(prop =>
-        {if (filterParams[prop] instanceof Array){
-            filterPosts = filterPosts.filter(post => {
-                let tmp = [];
-                tmp = filterParams[prop].filter(tag => post[prop].includes(tag));
-                if (tmp.length !== 0) {
-                    return true;
-                }
-            });
-        }else if(filterParams[prop] instanceof Date){
-            filterPosts = filterPosts.filter(post => post[prop].toDateString() === filterParams[prop].toDateString());
-        }else {
-            filterPosts = filterPosts.filter(post => post[prop] === filterParams[prop]);
-        }
+
+        Object.entries(filterParams).forEach(([prop, filterValue]) => {
+            if (filterValue instanceof Array) {
+                filterPosts = filterPosts.filter(post => post[prop].some((tag) => filterValue.includes(tag)));
+            } else if (filterValue instanceof Date) {
+                filterPosts = filterPosts.filter(post => post[prop].toDateString() === filterValue.toDateString());
+            } else {
+                filterPosts = filterPosts.filter(post => post[prop] === filterValue);
+            }
         });
+
         return filterPosts;
     };
 
-    _changePost(post, changes){
-        let changesProps = Object.keys(changes);
-        changesProps.forEach(prop => {
-            if(prop !== "author" && prop !== "id" && prop!== "createAt") {
-                if (!(changes[prop] instanceof Array)) {
-                    post[prop] = changes[prop];
-                } else {
-                    post[prop].splice(0, post.tags.length);
-                    changes[prop].forEach(tag => {
-                        if (typeof tag === "string") {
-                            if (tag[0] !== '#')
-                                post[prop].push('#' + tag);
-                            else
-                                post[prop].push(tag);
-                        }
-                    });
-                }
-            }
-        });
+    _changePost(post, changes) {
+        Object.keys(changes)
+            .filter((prop) => !IMMUTABLE_KEYS.includes(prop))
+            .forEach((prop) => post[prop] = changes[prop]);
     }
 
     getPage(current = 0, step = 10, filterParams = {}) {
-        let postsToReturn = [];
-        let postCount = 0;
         let filterPosts = this._filter(filterParams);
+        filterPosts.sort(CREATION_COMPARATOR);
 
-        filterPosts.sort((a, b) => {
-            return b.createAt - a.createAt;
-        });
-
-        while (step !== postCount && filterPosts[current]) {
-            postsToReturn.push(filterPosts[current]);
-            current++;
-            postCount++;
-        }
-        console.log(postsToReturn);
-        return postsToReturn;
+        return filterPosts.slice(current, step - current);
     }
 
     get(id) {
-        this._posts.forEach(post => {
-            if (id === post.id) {
-                return post;
-            }
-        });
+        return this._posts.find(post => post.id === id);
     }
 
     add(newPost) {
         if (PostsCollection.validate(newPost)) {
-            for (let post of this._posts) {
-                if (post.id === newPost.id) {
-                    return false;
-                }
+            if (this._posts.find(post => post.id === newPost.id)) {
+                return false;
             }
             this._posts.push(newPost);
             return true;
@@ -84,30 +50,24 @@ class PostsCollection{
     }
 
     edit(id, changes) {
-        let isEdit = false;
-        let i = this._posts.findIndex(post => {
-            if (post.id === id) {
-                let changedPost = {};
-                for (let key in post) {
-                    changedPost[key] = post[key];
-                }
-                this._changePost(changedPost, changes);
-                if (PostsCollection.validate(changedPost)){
-                    this._posts.splice(i, 1, changedPost);
-                    isEdit = true;
-                }
+        let postIndex = this._posts.findIndex(post => post.id === id);
+        if (postIndex !== 1) {
+            let changedPost = Object.assign({}, this._posts[postIndex]);
+            this._changePost(changedPost, changes);
+            if (PostsCollection.validate(changedPost)) {
+                this._posts.splice(postIndex, 1, changedPost);
+                return true;
             }
-        });
-        return isEdit;
+        }
+        return false;
     }
 
     remove(id) {
-        let i = this._posts.findIndex(post => {
-            if(post.id === id){
-                this._posts.splice(i, 1);
-                return true;
-            }
-        });
+        let i = this._posts.findIndex(post => post.id === id);
+        if (i !== -1) {
+            this._posts.splice(i, 1);
+            return true;
+        }
         return false;
     }
 
@@ -124,16 +84,10 @@ class PostsCollection{
     }
 
     addAll(postsArray) {
-        let notAddedPosts = [];
-        postsArray.forEach(post => {
-            if (!(this.add(post))) {
-                notAddedPosts.push(post);
-            }
-        });
-        return notAddedPosts;
+        return postsArray.filter((post) => !this.add(post));
     }
-
 }
+
 (() => {
     window.postsCollection = new PostsCollection();
 })();

@@ -1,7 +1,9 @@
 # содержимое файла .gitignore для IDEA
 *.iml
-target/
 .DS_Store/
 .idea/
 out/
 *.class
+# Maven build dir
+target/
+node_modules/

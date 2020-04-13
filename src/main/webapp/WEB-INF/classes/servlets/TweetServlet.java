@@ -34,7 +34,7 @@ public class TweetServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         List<JSONObject> responseList = new ArrayList<>();
 
-        for (Tweet tweet: TweetCollection.tweets){
+        for (Tweet tweet : TweetCollection.tweets) {
             responseList.add(new JSONObject(tweet.toMap()));
         }
 
