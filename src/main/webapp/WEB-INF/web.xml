@@ -4,7 +4,10 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  
+  <servlet>
+    <servlet-name>status</servlet-name>
+    <servlet-class>servlets.StatusServlet</servlet-class>
+  </servlet>
   <servlet>
     <servlet-name>tweet</servlet-name>
     <servlet-class>servlets.TweetServlet</servlet-class>
@@ -21,6 +24,10 @@
   <servlet-mapping>
     <servlet-name>index</servlet-name>
     <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>status</servlet-name>
+    <url-pattern>/status</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
