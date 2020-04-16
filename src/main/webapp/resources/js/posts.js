@@ -51,7 +51,7 @@ class PostsCollection {
 
     edit(id, changes) {
         let postIndex = this._posts.findIndex(post => post.id === id);
-        if (postIndex !== 1) {
+        if (postIndex !== -1) {
             let changedPost = Object.assign({}, this._posts[postIndex]);
             this._changePost(changedPost, changes);
             if (PostsCollection.validate(changedPost)) {
