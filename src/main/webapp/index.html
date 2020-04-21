@@ -11,22 +11,17 @@
     <div class="header-content">
         <div class="inline-block">
             <a href="#" class="go-to-homepage" title="Homepage">
-                <img id="logo"  src="resources/img/logo.png" title="Homepage" alt="Logo">
+                <img id="logo" src="resources/img/logo.png" title="Homepage" alt="Logo">
             </a>
         </div>
 
-        <h3  class="inline-block" id="username-in-header">@username</h3>
+        <h3 class="inline-block" id="username-in-header"></h3>
 
         <div class="right-block">
             <label>
                 <input class="search" type="search" placeholder=" #tags...">
             </label>
-            <a href="#" class="new-post" title="New post">
-                <img class="header-icons" src="resources/img/add-post.png" title="Profile" alt="Add new post">
-            </a>
-            <button class="log-out-button">
-                <img class="header-icons" src="resources/img/log-out.png" title="Log out" alt="Log out">
-            </button>
+            <div id="header-button"></div>
         </div>
     </div>
 </header>
@@ -35,20 +30,20 @@
     <div class="make-new-post-area">
         <form>
             <div class="column-1">
-                <img class="user-photo" src="resources/photos/user-photo.jpg" alt="User photo" >
+                <img class="user-photo" src="resources/photos/user-photo.jpg" alt="User photo">
             </div>
 
             <div class="column-2">
                 <div class="post-text">
                     <label>
-                            <textarea class="new-post-textarea" placeholder="The text of your post..."
-                                      maxlength="280" spellcheck="true"></textarea>
+                        <textarea class="new-post-textarea" placeholder="The text of your post..."
+                                  maxlength="280" spellcheck="true"></textarea>
                     </label>
                 </div>
                 <div class="action-area">
                     <div class="add-photo-area">
                         <a href="#" class="upload-a-photo" title="Upload a Photo">
-                            <img class="add-photo" src="resources/img/add-image.png" alt="Add photo" >
+                            <img class="add-photo" src="resources/img/add-image.png" alt="Add photo">
                         </a>
                     </div>
                     <div class="add-new-post">
@@ -61,7 +56,7 @@
 
 
     <div class="filter-area">
-        <div class="filter-content" >
+        <div class="filter-content">
             <form>
                 <label>
                     <fieldset>
@@ -80,371 +75,10 @@
         </div>
     </div>
 
-    <article class="user-post">
-        <div class="column-with-user-photo">
-            <img class="user-photo" src="resources/photos/user-photo.jpg" alt="User photo">
-        </div>
-        <div class="column-2">
-            <div class="post-info">
-                <div class="username-container">
-                    <h4 class="username">@username</h4>
-                </div>
-                <div class="date-and-time">
-                    <p>12:30 02.03.20</p>
-                </div>
-            </div>
-            <div class="post-text">
-                <p>
-                    A man from Australia has a snake. He feeds it a rat. He holds the rat with tongs.
-                    The snake eats the tongs, too. This is dangerous for the snake. Doctors operate on it.
-                    They take out the tongs.
-                    The snake’s name is Winston. He is getting better.<br>
-                    #snake
-                </p>
-            </div>
-            <div class="action-area">
-                <div class="like">
-                    <button class="like-button">
-                        <img class="add-like" src="resources/img/like.png" alt="Like" >
-                    </button>
-                </div>
-                <div class="action-container">
-                    <div class="change-post">
-                        <button class="change-post-button">
-                            <img class="change-icon" src="resources/img/add-post.png" alt="Change post" >
-                        </button>
-                    </div>
-                    <div class="delete-post">
-                        <button class="delete-post-button">
-                            <img class="delete-icon" src="resources/img/delete.png" alt="Delete post" >
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article class="other-post">
-        <div class="column-with-user-photo">
-            <img class="user-photo" src="resources/photos/dog.jpg" alt="User photo">
-        </div>
-        <div class="column-2">
-            <div class="post-info">
-                <div class="username-container">
-                    <h4 class="username">@dog_robbi</h4>
-                </div>
-                <div class="date-and-time">
-                    <p>14:23 27.02.20</p>
-                </div>
-            </div>
-            <div class="post-text">
-                <p>
-                    Hello students, there is a group on Facebook.
-                    This group is for all students and teachers of English who use newsinlevels.com.
-                    You can be in this group too.<br>
-                    #english
-                </p>
-            </div>
-            <div class="action-area">
-                <div class="like">
-                    <button class="like-button">
-                        <img class="add-like" src="resources/img/like.png" alt="Like" >
-                    </button>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article class="other-post">
-        <div class="column-with-user-photo">
-            <img class="user-photo" src="resources/photos/fish.jpg" alt="User photo">
-        </div>
-        <div class="column-2">
-            <div class="post-info">
-                <div class="username-container">
-                    <h4 class="username">@japan_fish</h4>
-                </div>
-                <div class="date-and-time">
-                    <p>11:09 25.02.20</p>
-                </div>
-            </div>
-            <div class="post-text">
-                <p>
-                    This year, there are the Olympics in Tokyo, Japan. Tokyo is the capital city of Japan.
-                    The coronavirus is in Japan. Japanese officials say that 100 people are ill.
-                    They think that it is not a problem for the Olympics.<br>
-                    #olimpics
-                </p>
-            </div>
-            <div class="action-area">
-                <div class="like">
-                    <button class="like-button">
-                        <img class="add-like" src="resources/img/like.png" alt="Like" >
-                    </button>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article class="user-post">
-        <div class="column-with-user-photo">
-            <img class="user-photo" src="resources/photos/user-photo.jpg" alt="User photo">
-        </div>
-        <div class="column-2">
-            <div class="post-info">
-                <div class="username-container">
-                    <h4 class="username">@username</h4>
-                </div>
-                <div class="date-and-time">
-                    <p>7:30 22.02.20</p>
-                </div>
-            </div>
-            <div class="post-text">
-                <p>
-                    A hairdresser has an idea. He makes a picture on somebody’s head.
-                    The picture looks like a famous person. Now, many people know about the hairdresser.
-                    He is happy.<br>
-                    #hairdresser
-                </p>
-            </div>
-            <div class="action-area">
-                <div class="like">
-                    <button class="like-button">
-                        <img class="add-like" src="resources/img/like.png" alt="Like" >
-                    </button>
-                </div>
-                <div class="action-container">
-                    <div class="change-post">
-                        <button class="change-post-button">
-                            <img class="change-icon" src="resources/img/add-post.png" alt="Change post" >
-                        </button>
-                    </div>
-                    <div class="delete-post">
-                        <button class="delete-post-button">
-                            <img class="delete-icon" src="resources/img/delete.png" alt="Delete post" >
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article class="other-post">
-        <div class="column-with-user-photo">
-            <img class="user-photo" src="resources/photos/fish.jpg" alt="User photo">
-        </div>
-        <div class="column-2">
-            <div class="post-info">
-                <div class="username-container">
-                    <h4 class="username">@japan_fish</h4>
-                </div>
-                <div class="date-and-time">
-                    <p>15:29 16.02.20</p>
-                </div>
-            </div>
-            <div class="post-text">
-                <p>
-                    A man attacks two bars in Hanau, Germany. The city has 100,000 people.
-                    It lies about 12 miles from Frankfurt, Germany.
-                    The man kills nine people. He injures many other people.
-                    Some of the people are Iranian.<br>
-                    #Germany
-                </p>
-            </div>
-            <div class="action-area">
-                <div class="like">
-                    <button class="like-button">
-                        <img class="add-like" src="resources/img/like.png" alt="Like" >
-                    </button>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article class="user-post">
-        <div class="column-with-user-photo">
-            <img class="user-photo" src="resources/photos/user-photo.jpg" alt="User photo">
-        </div>
-        <div class="column-2">
-            <div class="post-info">
-                <div class="username-container">
-                    <h4 class="username">@username</h4>
-                </div>
-                <div class="date-and-time">
-                    <p>17:30 13.02.20</p>
-                </div>
-            </div>
-            <div class="post-text">
-                <p>
-                    Last weekend, a big storm hits the UK. Wales and Southern England have a lot of problems.
-                    There is heavy rain. There is more rain in two days than in the whole month.<br>
-                    #hstorm #UK
-                </p>
-            </div>
-            <div class="action-area">
-                <div class="like">
-                    <button class="like-button">
-                        <img class="add-like" src="resources/img/like.png" alt="Like" >
-                    </button>
-                </div>
-                <div class="action-container">
-                    <div class="change-post">
-                        <button class="change-post-button">
-                            <img class="change-icon" src="resources/img/add-post.png" alt="Change post" >
-                        </button>
-                    </div>
-                    <div class="delete-post">
-                        <button class="delete-post-button">
-                            <img class="delete-icon" src="resources/img/delete.png" alt="Delete post" >
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article class="other-post">
-        <div class="column-with-user-photo">
-            <img class="user-photo" src="resources/photos/dog.jpg" alt="User photo">
-        </div>
-        <div class="column-2">
-            <div class="post-info">
-                <div class="username-container">
-                    <h4 class="username">@dog_robbi</h4>
-                </div>
-                <div class="date-and-time">
-                    <p>21:21 10.02.20</p>
-                </div>
-            </div>
-            <div class="post-text">
-                <p>
-                    Some people go to Chernobyl. It is in Ukraine. They see a fox. One person films the fox.
-                    The fox is not afraid of the people. They give it some bread.
-                    They give it some meat. The fox stacks the food. It makes a big sandwich!<br>
-                    #animal #funny #fox
-                </p>
-            </div>
-            <div class="action-area">
-                <div class="like">
-                    <button class="like-button">
-                        <img class="add-like" src="resources/img/like.png" alt="Like" >
-                    </button>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article class="user-post">
-        <div class="column-with-user-photo">
-            <img class="user-photo" src="resources/photos/user-photo.jpg" alt="User photo">
-        </div>
-        <div class="column-2">
-            <div class="post-info">
-                <div class="username-container">
-                    <h4 class="username">@username</h4>
-                </div>
-                <div class="date-and-time">
-                    <p>5:30 05.02.20</p>
-                </div>
-            </div>
-            <div class="post-text">
-                <p>
-                    Scientists study penguins in Antarctica. They find out that the number of penguins goes down.
-                    Some populations go down by more than 75% in the last 50 years. The situation is very serious.
-                    Scientists believe that the biggest problem is climate change. Water in oceans is warmer.
-                    Ice in Antarctica melts. This is not good for some animals that live there.<br>
-                    #peguins #Antarctica
-                </p>
-            </div>
-            <div class="action-area">
-                <div class="like">
-                    <button class="like-button">
-                        <img class="add-like" src="resources/img/like.png" alt="Like" >
-                    </button>
-                </div>
-                <div class="action-container">
-                    <div class="change-post">
-                        <button class="change-post-button">
-                            <img class="change-icon" src="resources/img/add-post.png" alt="Change post" >
-                        </button>
-                    </div>
-                    <div class="delete-post">
-                        <button class="delete-post-button">
-                            <img class="delete-icon" src="resources/img/delete.png" alt="Delete post" >
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article class="other-post">
-        <div class="column-with-user-photo">
-            <img class="user-photo" src="resources/photos/dog.jpg" alt="User photo">
-        </div>
-        <div class="column-2">
-            <div class="post-info">
-                <div class="username-container">
-                    <h4 class="username">@dog_robbi</h4>
-                </div>
-                <div class="date-and-time">
-                    <p>4:00 04.02.20</p>
-                </div>
-            </div>
-            <div class="post-text">
-                <p>
-                    Last month, the US kills an important Iranian general. Iran does not like this.
-                    Iran attacks a US military base in Iraq.
-                    The US president says that no one at the military base is hurt or killed.
-                    Later, he says some of them have “headaches.”<br>
-                    #US
-                </p>
-            </div>
-            <div class="action-area">
-                <div class="like">
-                    <button class="like-button">
-                        <img class="add-like" src="resources/img/like.png" alt="Like" >
-                    </button>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article class="other-post">
-        <div class="column-with-user-photo">
-            <img class="user-photo" src="resources/photos/fish.jpg" alt="User photo">
-        </div>
-        <div class="column-2">
-            <div class="post-info">
-                <div class="username-container">
-                    <h4 class="username">@japan_fish</h4>
-                </div>
-                <div class="date-and-time">
-                    <p>1:29 01.02.20</p>
-                </div>
-            </div>
-            <div class="post-text">
-                <p>
-                    This news is from Peru. Experts work on a church. It is a very old church.
-                    They want to make it nice again. During the work, they find something.
-                    It is a crypt. It is 500 years old. There are bones inside the crypt. They are human bones.
-                    These bones are from 32 people.
-                    Experts also find a painting. It is a painting on a wall. It shows baby Jesus.<br>
-                    #Peru #bones
-                </p>
-            </div>
-            <div class="action-area">
-                <div class="like">
-                    <button class="like-button">
-                        <img class="add-like" src="resources/img/like.png" alt="Like" >
-                    </button>
-                </div>
-            </div>
-        </div>
-    </article>
+    <div id="posts-area"></div>
 
     <div class="load-more-posts">
-        <button class="load-more-button" ><strong>Load more</strong></button>
+        <button class="load-more-button"><strong>Load more</strong></button>
     </div>
 </main>
 
@@ -454,5 +88,8 @@
             &emsp;kosasha998@gmail.com&emsp;09.03.2020</p>
     </div>
 </footer>
+<script src="resources/js/posts.js"></script>
+<script src="resources/js/view.js"></script>
+<script src="resources/js/main.js"></script>
 </body>
 </html>

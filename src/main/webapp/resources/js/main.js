@@ -5,7 +5,7 @@ posts = [
         Doctors operate on it and take out the tongs. The snake is getting better.`,
         createAt: new Date('2020-03-10'),
         author: 'username',
-        photoLink: 'photos/user-photo.jpg',
+        photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#snake'],
         likes: [],
     },
@@ -16,7 +16,7 @@ posts = [
         You can be in this group too.`,
         createAt: new Date('2020-03-11'),
         author: 'dog_robbi',
-        photoLink: 'photos/dog.jpg',
+        photoLink: 'resources/photos/dog.jpg',
         tags: ['#english'],
         likes: []
     },
@@ -27,7 +27,7 @@ posts = [
         They think that it is not a problem for the Olympics.`,
         createAt: new Date('2020-03-12'),
         author: 'japan_fish',
-        photoLink: 'photos/fish.jpg',
+        photoLink: 'resources/photos/fish.jpg',
         tags: ['#olimpics'],
         likes: []
     },
@@ -38,7 +38,7 @@ posts = [
         He is happy.`,
         createAt: new Date('2020-03-13'),
         author: 'username',
-        photoLink: 'photos/user-photo.jpg',
+        photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#hairdresser'],
         likes: []
     },
@@ -48,7 +48,7 @@ posts = [
         Germany. The man kills nine people. He injures many other people.Some of the people are Iranian.`,
         createAt: new Date('2020-03-14'),
         author: 'big_panda',
-        photoLink: 'photos/panda.jpg',
+        photoLink: 'resources/photos/panda.jpg',
         tags: ['#Germany'],
         likes: []
     },
@@ -58,7 +58,7 @@ posts = [
         There is heavy rain. There is more rain in two days than in the whole month.`,
         createAt: new Date('2020-03-14'),
         author: 'username',
-        photoLink: 'photos/user-photo.jpg',
+        photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#hstorm', '#UK'],
         likes: []
     },
@@ -69,7 +69,7 @@ posts = [
         They give it some meat.`,
         createAt: new Date('2020-03-15'),
         author: 'dog_robbi',
-        photoLink: 'photos/dog.jpg',
+        photoLink: 'resources/photos/dog.jpg',
         tags: ['#animal', '#funny', '#fox'],
         likes: []
     },
@@ -79,7 +79,7 @@ posts = [
         down by more than 75% in the last 50 years. The situation is very serious.`,
         createAt: new Date('2020-03-16'),
         author: 'username',
-        photoLink: 'photos/user-photo.jpg',
+        photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#peguins', '#Antarctica'],
         likes: []
     },
@@ -89,7 +89,7 @@ posts = [
         Iran attacks a US military base in Iraq. The US president says that no one at the military base is hurt or killed.`,
         createAt: new Date('2020-03-17'),
         author: 'cute_koala',
-        photoLink: 'photos/koala.jpg',
+        photoLink: 'resources/photos/koala.jpg',
         tags: ['#US'],
         likes: []
     },
@@ -99,7 +99,7 @@ posts = [
         something. It is 500 years old crypt. There are bones inside the crypt. They are human bones.`,
         createAt: new Date('2020-03-18'),
         author: 'japan_fish',
-        photoLink: 'photos/fish.jpg',
+        photoLink: 'resources/photos/fish.jpg',
         tags: ['#Peru', '#bones'],
         likes: []
     },
@@ -110,7 +110,7 @@ posts = [
         are not travelling.`,
         createAt: new Date('2020-03-19'),
         author: 'big_panda',
-        photoLink: 'photos/panda.jpg',
+        photoLink: 'resources/photos/panda.jpg',
         tags: ['#coronavirus'],
         likes: []
     },
@@ -120,7 +120,7 @@ posts = [
         called "Just Walk Out,". Shoppers go into a store, put their shopping in their bag and then... just walk out.`,
         createAt: new Date('2020-03-20'),
         author: 'dog_robbi',
-        photoLink: 'photos/dog.jpg',
+        photoLink: 'resources/photos/dog.jpg',
         tags: ['#Amazon'],
         likes: []
     },
@@ -130,7 +130,7 @@ posts = [
         found that a third did not wash their hands after using the toilet.`,
         createAt: new Date('2020-03-21'),
         author: 'username',
-        photoLink: 'photos/user-photo.jpg',
+        photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#coronavirus'],
         likes: []
     },
@@ -140,7 +140,7 @@ posts = [
         protect children from the COVID-19 virus. Schools will stay closed until April the 8th.`,
         createAt: new Date('2020-03-22'),
         author: 'cute_koala',
-        photoLink: 'photos/koala.jpg',
+        photoLink: 'resources/photos/koala.jpg',
         tags: ['#coronavirus'],
         likes: []
     },
@@ -150,7 +150,7 @@ posts = [
         37,000 airports to take off from and land at.`,
         createAt: new Date('2020-03-23'),
         author: 'japan_fish',
-        photoLink: 'photos/fish.jpg',
+        photoLink: 'resources/photos/fish.jpg',
         tags: ['#games'],
         likes: []
     },
@@ -160,7 +160,7 @@ posts = [
         St Pancras International because of the Eurostar trains to France, Belgium and Holland.`,
         createAt: new Date('2020-03-24'),
         author: 'username',
-        photoLink: 'photos/user-photo.jpg',
+        photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#London', '#railway'],
         likes: []
     },
@@ -170,7 +170,7 @@ posts = [
         It said criminals brains had a different structure to the brains of non-criminals`,
         createAt: new Date('2020-03-25'),
         author: 'big_panda',
-        photoLink: 'photos/panda.jpg',
+        photoLink: 'resources/photos/panda.jpg',
         tags: ['#interesting'],
         likes: []
     },
@@ -180,7 +180,7 @@ posts = [
         of intelligence". Scientists will scan the sky for signs of alien life.`,
         createAt: new Date('2020-03-26'),
         author: 'cute_koala',
-        photoLink: 'photos/koala.jpg',
+        photoLink: 'resources/photos/koala.jpg',
         tags: ['#space'],
         likes: []
     },
@@ -191,7 +191,7 @@ posts = [
         increase in 2020.`,
         createAt: new Date('2020-03-27'),
         author: 'dog_robbi',
-        photoLink: 'photos/dog.jpg',
+        photoLink: 'resources/photos/dog.jpg',
         tags: ['#nature'],
         likes: []
     },
@@ -201,21 +201,25 @@ posts = [
         will give parents seven months of leave. This is almost double the amount of its current leave.`,
         createAt: new Date('2020-03-28'),
         author: 'japan_fish',
-        photoLink: 'photos/fish.jpg',
+        photoLink: 'resources/photos/fish.jpg',
         tags: ['#Finland'],
         likes: []
     },
 ];
 
-let newPost = {id: '21',
-    description: `Parents in Finland will get more time to spend with their babies. The government 
-        will give parents seven months of leave. This is almost double the amount of its current leave.`,
-    createAt: new Date('2020-03-28'),
-    author: 'japan_fish',
-    photoLink: 'photos/fish.jpg',
-    tags: ['#Finland'],
-    likes: []};
 
 window.postsCollection.addAll(posts);
+window.View.createHeader();
+let postsToLoad = window.postsCollection.getPage(0, 10);
+postsToLoad.forEach(post => document.getElementById('posts-area').append(window.View.createPost(post)));
+
+//test example
+/*let changes = {
+    description : "Hello world",
+    tags : ['#hello'],
+    photoLink : 'resources/photos/koala.jpg'
+};
+window.View.removePost('20');
+window.View.editPost('19', changes);*/
 
 
