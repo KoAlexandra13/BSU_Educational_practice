@@ -208,7 +208,6 @@ posts = [
 ];
 
 window.postsCollection.addAll(posts);
-//window.view.changeUser(localStorage.getItem('currentUser'));
 window.view.createHeader();
 window.view.createAddPostArea();
 

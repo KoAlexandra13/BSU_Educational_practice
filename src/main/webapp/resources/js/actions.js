@@ -44,21 +44,22 @@ for (let like of likes) {
     });
 }
 
-function applyFilter(){
+function applyFilter() {
     let author = document.getElementById('author').value;
     let tags = document.getElementById('tags').value.split(" ");
-    let createAt = document.getElementById('createAt').value;
+    let createAt = new Date(document.getElementById('createAt').value);
     let filterConfig = Object.create(Object.prototype);
-    if(author){
+    if (author) {
         filterConfig.author = author;
     }
-    if(createAt){
+    if (createAt) {
         filterConfig.createAt = createAt;
     }
-    if((!tags.includes(""))){
+    if ((!tags.includes(""))) {
         filterConfig.tags = tags;
     }
-    window.postsCollection.getPage(0,10, filterConfig).forEach(post =>
+    let postsToLoad = window.postsCollection.getPage(0, 10, filterConfig);
+    postsToLoad.forEach(post =>
         document.getElementById('posts-area').append(window.view.createPost(post)));
 }
 

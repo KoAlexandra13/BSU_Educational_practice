@@ -1,17 +1,21 @@
-package tweets;
+package service;
+
+import tweets.Tweet;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class TweetCollection {
-    public static List<Tweet> tweets = new ArrayList<Tweet>() {
+public class TweetService implements BaseService{
+
+    public List<Tweet> tweets = new ArrayList<Tweet>() {
         {
             add(new Tweet("1", "A man from Australia has a snake. He feeds it a rat with tongs. " +
                     "This is dangerous for the snake." +
                     "Doctors operate on it and take out the tongs. The snake is getting better.",
-                    "username", "photos/user-photo.jpg", new ArrayList<>(), new ArrayList<>()));
+                    "username", "photos/user-photo.jpg", new ArrayList<String>(){{add("#snake");}},
+                    new ArrayList<>()));
 
             add(new Tweet("2", "Hello students, there is a group on Facebook." +
                     "This group is for all students and teachers of English who use newsinlevels.com." +
@@ -26,7 +30,22 @@ public class TweetCollection {
         }
     };
 
-    public static Tweet add(Map<String, Object> tweetToAdd) throws ClassNotFoundException, IllegalAccessException {
+    private List<Tweet> filter(Map<String, Object> filterConfig){
+        List<Tweet> filterTweets = new ArrayList<>(tweets);
+        filterTweets = filterTweets.stream().
+                filter(tweet -> {
+                    try {
+                        return tweet.match(filterConfig);
+                    } catch (NoSuchFieldException | ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    return false;
+                }).
+                collect(Collectors.toList());
+        return filterTweets;
+    }
+
+    public Tweet add(Map<String, Object> tweetToAdd) throws ClassNotFoundException, IllegalAccessException {
         if (!Tweet.isValid(tweetToAdd)) {
             return null;
         }
@@ -41,13 +60,13 @@ public class TweetCollection {
         return newTweet;
     }
 
-    public static List<Map<String, Object>> addAll(List<Map<String, Object>> tweetsToAdd) {
+    public List<Map<String, Object>> addAll(List<Map<String, Object>> tweetsToAdd) {
         List<Map<String, Object>> addedTweets = new ArrayList<>();
 
         tweetsToAdd.forEach(tweet -> {
             if (Tweet.isValid(tweet)) {
                 try {
-                    Tweet addedTweet = TweetCollection.add(tweet);
+                    Tweet addedTweet = this.add(tweet);
                     if (addedTweet != null) {
                         addedTweets.add(addedTweet.toMap());
                     }
@@ -59,7 +78,7 @@ public class TweetCollection {
         return addedTweets;
     }
 
-    public static Map<String, Object> remove(String tweetId) {
+    public Map<String, Object> remove(String tweetId) {
         List<Tweet> elementsToRemove = tweets.stream().filter(tweet -> tweet.id.equals(tweetId)).collect(Collectors.toList());
         tweets.removeAll(elementsToRemove);
         if (elementsToRemove.size() > 0) {
@@ -69,7 +88,7 @@ public class TweetCollection {
         }
     }
 
-    public static Map<String, Object> get(String tweetId) {
+    public Map<String, Object> get(String tweetId) {
         for (Tweet tweet : tweets) {
             if (tweet.id.equals(tweetId))
                 return tweet.toMap();
@@ -77,8 +96,40 @@ public class TweetCollection {
         return null;
     }
 
-    public static void clear() {
+    public void clear() {
         tweets.clear();
+    }
+
+    public List<Tweet> getPage(int current, int step, Map<String, Object> filterConfig){
+        List<Tweet> filterTweets;
+        if(filterConfig.isEmpty()){
+            filterTweets = this.tweets;
+        }
+        else {
+            filterTweets = filter(filterConfig);
+        }
+        int postCount = 0;
+        List<Tweet> tweetsToReturn = filter(filterConfig);
+        while(step != postCount && filterTweets.size() < current){
+            tweetsToReturn.add(filterTweets.get(current));
+            current++;
+            postCount++;
+        }
+        return tweetsToReturn;
+    }
+
+    public Boolean editTweet(String tweetId, Map<String, Object> changes) throws NoSuchFieldException, ClassNotFoundException {
+        for (Tweet tweet : tweets) {
+            if (tweet.id.equals(tweetId)){
+                Tweet changedTweet = tweet.change(changes);
+                if(Tweet.isValid(changedTweet.toMap())){
+                    remove(tweetId);
+                    tweets.add(changedTweet);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }
