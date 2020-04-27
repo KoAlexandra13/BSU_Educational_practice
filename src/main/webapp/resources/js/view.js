@@ -1,17 +1,18 @@
 class View {
-    constructor(username) {
-        this._user = username;
+    constructor(user) {
+        this._user = user;
+    }
+
+    changeUser(user){
+        this._user = user;
     }
 
     createHeader() {
         const user = document.getElementById('username-in-header');
         const headerBtn = document.getElementById('header-button');
         if (this._user) {
-            user.innerText = '@' + this._user;
+            user.innerText = '@' + this._user.username;
             headerBtn.innerHTML = `
-                <a href="#" class="new-post" title="New post">
-                    <img class="header-icons" src="resources/img/add-post.png" title="Profile" alt="Add new post">
-                </a>
                 <button class="log-out-button">
                     <img class="header-icons" src="resources/img/log-out.png" title="Log out" alt="Log out">
                 </button>`;
@@ -53,8 +54,14 @@ class View {
         let actionArea = document.createElement('div');
         actionArea.className = 'action-area';
 
-        if (post.author === this._user) {
-            actionArea.innerHTML = `
+        let likeImg = "resources/img/like.png";
+
+        if (this._user) {
+            likeImg = (post.likes.includes(this._user.username)) ? "resources/img/red_like.png"
+                : "resources/img/like.png";
+
+            if(post.author === this._user.username) {
+                actionArea.innerHTML = `
                     <div class="action-container">
                         <div class="change-post">
                             <button class="change-post-button">
@@ -67,12 +74,13 @@ class View {
                             </button>
                         </div>
                     </div>`;
+            }
         }
 
         actionArea.insertAdjacentHTML('afterBegin', `
                     <div class="like">
                         <button class="like-button">
-                            <img class="add-like" src="resources/img/like.png" alt="Like" >
+                            <img class="add-like" src=${likeImg} alt="Like" >
                         </button>
                     </div>`);
 
@@ -106,8 +114,42 @@ class View {
             photoLink.src = window.postsCollection.get(postId).photoLink;
         }
     }
+
+    createAddPostArea() {
+        if (this._user) {
+            let postMaker = document.createElement('div');
+            postMaker.className = 'make-new-post-area';
+            postMaker.innerHTML = `
+        <form>
+            <div class="column-1">
+                <img class="user-photo" src=${this._user.photoLink} alt="User photo">
+            </div>
+
+            <div class="column-2">
+                <div class="post-text">
+                    <label>
+                        <textarea class="new-post-textarea" placeholder="The text of your post..."
+                                  maxlength="280" spellcheck="true"></textarea>
+                    </label>
+                </div>
+                <div class="action-area">
+                    <div class="add-photo-area">
+                        <a href="#" class="upload-a-photo" title="Upload Photo">
+                            <img class="add-photo" src="resources/img/add-image.png" alt="Add photo">
+                        </a>
+                    </div>
+                    <div class="add-new-post">
+                        <button class="add-post-button"><strong>Add</strong></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+`;
+            document.getElementsByClassName('posts-container')[0].prepend(postMaker);
+        }
+    }
 }
 
 (() => {
-    window.View = new View('username');
+    window.view = new View();
 })();

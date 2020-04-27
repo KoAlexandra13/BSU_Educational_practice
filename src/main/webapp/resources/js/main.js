@@ -7,7 +7,7 @@ posts = [
         author: 'username',
         photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#snake'],
-        likes: [],
+        likes: ['bid_panda', 'dog_robbi', 'username', 'japan_fish', 'cute_koala'],
     },
     {
         id: '2',
@@ -18,7 +18,7 @@ posts = [
         author: 'dog_robbi',
         photoLink: 'resources/photos/dog.jpg',
         tags: ['#english'],
-        likes: []
+        likes: ['dog_robbi', 'username', 'cute_koala']
     },
     {
         id: '3',
@@ -29,7 +29,7 @@ posts = [
         author: 'japan_fish',
         photoLink: 'resources/photos/fish.jpg',
         tags: ['#olimpics'],
-        likes: []
+        likes: ['bid_panda', 'username', 'japan_fish']
     },
     {
         id: '4',
@@ -40,7 +40,7 @@ posts = [
         author: 'username',
         photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#hairdresser'],
-        likes: []
+        likes: ['japan_fish', 'cute_koala']
     },
     {
         id: '5',
@@ -50,7 +50,7 @@ posts = [
         author: 'big_panda',
         photoLink: 'resources/photos/panda.jpg',
         tags: ['#Germany'],
-        likes: []
+        likes: ['bid_panda', 'dog_robbi', 'username']
     },
     {
         id: '6',
@@ -60,7 +60,7 @@ posts = [
         author: 'username',
         photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#hstorm', '#UK'],
-        likes: []
+        likes: ['bid_panda', 'username', 'cute_koala']
     },
     {
         id: '7',
@@ -71,7 +71,7 @@ posts = [
         author: 'dog_robbi',
         photoLink: 'resources/photos/dog.jpg',
         tags: ['#animal', '#funny', '#fox'],
-        likes: []
+        likes: ['dog_robbi', 'username']
     },
     {
         id: '8',
@@ -81,7 +81,7 @@ posts = [
         author: 'username',
         photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#peguins', '#Antarctica'],
-        likes: []
+        likes: ['dog_robbi', 'username', 'japan_fish']
     },
     {
         id: '9',
@@ -91,7 +91,7 @@ posts = [
         author: 'cute_koala',
         photoLink: 'resources/photos/koala.jpg',
         tags: ['#US'],
-        likes: []
+        likes: ['username', 'japan_fish', 'cute_koala']
     },
     {
         id: '10',
@@ -101,7 +101,7 @@ posts = [
         author: 'japan_fish',
         photoLink: 'resources/photos/fish.jpg',
         tags: ['#Peru', '#bones'],
-        likes: []
+        likes: ['bid_panda', 'dog_robbi', 'japan_fish', 'cute_koala']
     },
     {
         id: '11',
@@ -112,7 +112,7 @@ posts = [
         author: 'big_panda',
         photoLink: 'resources/photos/panda.jpg',
         tags: ['#coronavirus'],
-        likes: []
+        likes: ['bid_panda', 'dog_robbi', 'username', 'japan_fish', 'cute_koala']
     },
     {
         id: '12',
@@ -122,7 +122,7 @@ posts = [
         author: 'dog_robbi',
         photoLink: 'resources/photos/dog.jpg',
         tags: ['#Amazon'],
-        likes: []
+        likes: ['dog_robbi', 'username', 'japan_fish']
     },
     {
         id: '13',
@@ -132,7 +132,7 @@ posts = [
         author: 'username',
         photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#coronavirus'],
-        likes: []
+        likes: ['dog_robbi', 'japan_fish', 'cute_koala']
     },
     {
         id: '14',
@@ -142,7 +142,7 @@ posts = [
         author: 'cute_koala',
         photoLink: 'resources/photos/koala.jpg',
         tags: ['#coronavirus'],
-        likes: []
+        likes: ['bid_panda', 'dog_robbi']
     },
     {
         id: '15',
@@ -152,7 +152,7 @@ posts = [
         author: 'japan_fish',
         photoLink: 'resources/photos/fish.jpg',
         tags: ['#games'],
-        likes: []
+        likes: ['bid_panda', 'dog_robbi', 'username', 'japan_fish']
     },
     {
         id: '16',
@@ -162,7 +162,7 @@ posts = [
         author: 'username',
         photoLink: 'resources/photos/user-photo.jpg',
         tags: ['#London', '#railway'],
-        likes: []
+        likes: ['bid_panda', 'username', 'japan_fish']
     },
     {
         id: '17',
@@ -172,7 +172,7 @@ posts = [
         author: 'big_panda',
         photoLink: 'resources/photos/panda.jpg',
         tags: ['#interesting'],
-        likes: []
+        likes: ['bid_panda', 'dog_robbi', 'username']
     },
     {
         id: '18',
@@ -182,7 +182,7 @@ posts = [
         author: 'cute_koala',
         photoLink: 'resources/photos/koala.jpg',
         tags: ['#space'],
-        likes: []
+        likes: ['japan_fish', 'cute_koala']
     },
     {
         id: '19',
@@ -193,7 +193,7 @@ posts = [
         author: 'dog_robbi',
         photoLink: 'resources/photos/dog.jpg',
         tags: ['#nature'],
-        likes: []
+        likes: ['bid_panda', 'username', 'japan_fish']
     },
     {
         id: '20',
@@ -203,23 +203,17 @@ posts = [
         author: 'japan_fish',
         photoLink: 'resources/photos/fish.jpg',
         tags: ['#Finland'],
-        likes: []
+        likes: ['bid_panda', 'dog_robbi', 'username', 'japan_fish']
     },
 ];
 
-
 window.postsCollection.addAll(posts);
-window.View.createHeader();
-let postsToLoad = window.postsCollection.getPage(0, 10);
-postsToLoad.forEach(post => document.getElementById('posts-area').append(window.View.createPost(post)));
+//window.view.changeUser(localStorage.getItem('currentUser'));
+window.view.createHeader();
+window.view.createAddPostArea();
 
-//test example
-/*let changes = {
-    description : "Hello world",
-    tags : ['#hello'],
-    photoLink : 'resources/photos/koala.jpg'
-};
-window.View.removePost('20');
-window.View.editPost('19', changes);*/
+let postsToLoad = window.postsCollection.getPage(0, 10);
+postsToLoad.forEach(post => document.getElementById('posts-area').append(window.view.createPost(post)));
+
 
 

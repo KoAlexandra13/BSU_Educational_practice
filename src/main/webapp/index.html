@@ -4,56 +4,49 @@
     <meta charset="UTF-8">
     <title>Odacova</title>
     <link rel="shortcut icon" type="image" href="resources/img/logo-ico.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="resources/css/style.css" type="text/css">
 </head>
 <body>
 <header>
     <div class="header-content">
         <div class="inline-block">
-            <a href="#" class="go-to-homepage" title="Homepage">
                 <img id="logo" src="resources/img/logo.png" title="Homepage" alt="Logo">
-            </a>
         </div>
 
         <h3 class="inline-block" id="username-in-header"></h3>
 
         <div class="right-block">
-            <label>
-                <input class="search" type="search" placeholder=" #tags...">
-            </label>
             <div id="header-button"></div>
         </div>
     </div>
 </header>
 
-<main class="posts-container">
-    <div class="make-new-post-area">
-        <form>
-            <div class="column-1">
-                <img class="user-photo" src="resources/photos/user-photo.jpg" alt="User photo">
+<div class="modal">
+    <div class="modal-content">
+        <span class="close">×</span>
+        <div class="modal-logo">
+            <img class="logo" src="resources/img/logo.png" alt="Logo">
+        </div>
+        <h1 class="modal-text">Sign in</h1>
+        <label>
+            <div class="username-input-div">
+                <i class="fa fa-user fa-lg" style="color: black" aria-hidden="true"></i>
+                <input class="username-input"  placeholder=" username">
             </div>
 
-            <div class="column-2">
-                <div class="post-text">
-                    <label>
-                        <textarea class="new-post-textarea" placeholder="The text of your post..."
-                                  maxlength="280" spellcheck="true"></textarea>
-                    </label>
-                </div>
-                <div class="action-area">
-                    <div class="add-photo-area">
-                        <a href="#" class="upload-a-photo" title="Upload a Photo">
-                            <img class="add-photo" src="resources/img/add-image.png" alt="Add photo">
-                        </a>
-                    </div>
-                    <div class="add-new-post">
-                        <button class="add-post-button"><strong>Add</strong></button>
-                    </div>
-                </div>
+            <div class="password-input-div">
+                <i class="fa fa-asterisk fa-lg" style="color: black" aria-hidden="true"></i>
+                <input class="password" type="password" placeholder=" password">
             </div>
-        </form>
+        </label>
+        <div class="load-more-posts">
+            <button class="sign-in-modal-button"><strong>Sign in</strong></button>
+        </div>
     </div>
+</div>
 
+<main class="posts-container">
 
     <div class="filter-area">
         <div class="filter-content">
@@ -62,9 +55,9 @@
                     <fieldset>
                         <legend>Filter by...</legend>
                         <div class="filter-container" id="filter">
-                            <textarea class="filter-textarea" placeholder=" username"></textarea>
-                            <textarea class="filter-textarea" placeholder=" #tag"></textarea>
-                            <textarea class="filter-textarea" placeholder=" dd-mm-yyyy"></textarea>
+                            <textarea class="filter-textarea" id="author" placeholder=" username"></textarea>
+                            <textarea class="filter-textarea" id="tags" placeholder=" #tag #tag"></textarea>
+                            <textarea class="filter-textarea" id="createAt" placeholder=" dd-mm-yyyy"></textarea>
                             <div>
                                 <button class="apply-button">Apply</button>
                             </div>
@@ -91,5 +84,7 @@
 <script src="resources/js/posts.js"></script>
 <script src="resources/js/view.js"></script>
 <script src="resources/js/main.js"></script>
+<script src="resources/js/user.js"></script>
+<script src="resources/js/actions.js"></script>
 </body>
 </html>

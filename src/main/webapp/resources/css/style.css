@@ -69,22 +69,26 @@ footer {
     margin-top: 8px;
 }
 
-.search {
-    border-radius: 50px;
-    border: 1px gray solid;
-    height: 27px;
-    margin-top: 5px;
-    outline: none;
-
-}
-
-#logo {
+#logo{
     width: 180px;
     padding-right: 20px;
     margin-top: -17px;
 }
 
-.posts-container {
+.logo, .modal-logo{
+    width: 180px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.modal-text{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+}
+
+main {
     max-width: 1300px;
     margin: 60px auto 80px;
     padding-top: 50px;
@@ -157,14 +161,15 @@ footer .footer-content {
     margin-top: 5px;
 }
 
-.add-post-button, .sign-in-button {
+.add-post-button{
     height: 103%;
 }
-.sign-in-button{
+.sign-in-button, #header-button{
     height: 27px;
+    width: 90px;
 }
 
-.add-post-button, .load-more-button, .apply-button, .sign-in-button {
+.add-post-button, .load-more-button, .apply-button, .sign-in-button, .sign-in-modal-button {
     border-radius: 50px;
     width: 100%;
     border: none;
@@ -182,7 +187,7 @@ footer .footer-content {
     width: 100%;
 }
 
-.load-more-button {
+.load-more-button, .sign-in-modal-button {
     width: 20%;
     margin-top: 20px;
     height: 2em;
@@ -219,7 +224,7 @@ fieldset {
 
 .filter-container {
     padding-bottom: -10px;
-    /*display: none;*/
+    display: none;
 }
 
 .filter-textarea {
@@ -296,6 +301,65 @@ article {
 .delete-post-button {
     margin-left: -15%;
     margin-top: 6%;
+}
+
+.username-input-div, .password-input-div, h1{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.password, .username-input{
+    height: 25px;
+    border-radius: 5px;
+    resize: none;
+    overflow: hidden;
+    background-color: white;
+    outline: none;
+    border: 1px solid lightgray;
+    font-family: "Arial", serif;
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.close {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.close:hover {
+    background-color: darkgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
 @media only screen and (max-width: 1000px) {
