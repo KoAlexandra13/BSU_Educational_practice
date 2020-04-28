@@ -1,11 +1,6 @@
 let modal = document.querySelector('.modal');
 let signInBtn = document.querySelector('.sign-in-button');
-let filter = document.getElementById('filter');
 let main = document.querySelector('main');
-
-function displayFilter() {
-    (filter.style.display === 'none') ? filter.style.display = 'block' : filter.style.display = 'none';
-}
 
 function createSignInArea(){
     window.modals.buildSingInModal();
@@ -58,7 +53,6 @@ function postActions() {
 }
 
 signInBtn.addEventListener('click', createSignInArea);
-filter.addEventListener('click', displayFilter);
 main.addEventListener('click', postActions);
 
 
