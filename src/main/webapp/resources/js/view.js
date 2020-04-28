@@ -70,6 +70,7 @@ class View {
             </div>
         </div>`;
 
+        window.postEvent.setPostEventListener(postContainer, post.id);
         return postContainer;
     }
 

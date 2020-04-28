@@ -20,7 +20,6 @@ function toggleAuthorisedPage(user) {
         }
         window.view.addDeleteLike(id);
     });
-
 }
 
 function windowOnClick(event) {
@@ -29,31 +28,27 @@ function windowOnClick(event) {
     }
 }
 
+function setUser(user) {
+    window.view.changeUser(user);
+    window.view.createHeader();
+    window.view.setIcon();
+    toggleAuthorisedPage(user);
+}
+
 function readInputFields() {
     let username = document.getElementsByClassName('username-input').item(0).value;
     let password = document.getElementsByClassName('password').item(0).value;
     let user = window.usersCollection.setUser(username, password);
     if (user) {
-        window.view.changeUser(user);
-        window.view.createHeader();
-        window.view.setIcon();
-        toggleAuthorisedPage(user);
+       setUser(user);
     }
     toggleModal();
     let modalContent = document.getElementsByClassName('modal-content').item(0);
     modalContent.remove();
 }
 
-function postActions() {
-    let articles = document.querySelectorAll('article');
-    articles.forEach(article => {
-            const id = article.id;
-            window.postEvent.setPostEventListener(article, id);
-    });
-}
+//signInBtn.addEventListener('click', createSignInArea);
 
-signInBtn.addEventListener('click', createSignInArea);
-main.addEventListener('click', postActions);
 
 
 

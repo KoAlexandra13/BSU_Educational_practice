@@ -215,5 +215,11 @@ const containerEl = document.querySelector('.posts-container');
 postsToLoad.forEach((post) => {
     containerEl.appendChild(window.view.buildPost(post));
 });
+setUser({
+    username: 'username',
+    password: '1111',
+    photoLink: 'resources/photos/user-photo.jpg',
+    postsId: ['1', '4', '6', '8', '13', '16']
+});
 
 
