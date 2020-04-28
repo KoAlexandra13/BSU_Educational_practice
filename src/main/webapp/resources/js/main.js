@@ -209,10 +209,11 @@ posts = [
 
 window.postsCollection.addAll(posts);
 window.view.createHeader();
-window.view.createAddPostArea();
 
 let postsToLoad = window.postsCollection.getPage(0, 10);
-postsToLoad.forEach(post => document.getElementById('posts-area').append(window.view.createPost(post)));
-
+const containerEl = document.querySelector('.posts-container');
+postsToLoad.forEach((post) => {
+    containerEl.appendChild(window.view.buildPost(post));
+});
 
 

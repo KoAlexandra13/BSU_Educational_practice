@@ -3,7 +3,7 @@ class View {
         this._user = user;
     }
 
-    changeUser(user){
+    changeUser(user) {
         this._user = user;
     }
 
@@ -21,7 +21,7 @@ class View {
         }
     }
 
-    createPost(post) {
+    buildPost(post) {
         const postCreateAt = post.createAt.getHours() + ':' + ('0' + post.createAt.getMinutes()).slice(-2) + ' '
             + post.createAt.getDate() + '.' + ('0' + (post.createAt.getMonth() + 1)).slice(-2)
             + '.' + post.createAt.getFullYear();
@@ -48,20 +48,12 @@ class View {
                         ${postTags}
                     </p>
                 </div>
-            </div>
-        </div>`;
-
-        let actionArea = document.createElement('div');
-        actionArea.className = 'action-area';
-
-        let likeImg = "resources/img/like.png";
-
-        if (this._user) {
-            likeImg = (post.likes.includes(this._user.username)) ? "resources/img/red_like.png"
-                : "resources/img/like.png";
-
-            if(post.author === this._user.username) {
-                actionArea.innerHTML = `
+                <div class="action-area">
+                    <div class="like">
+                        <button class="like-button">
+                            <img class="add-like" src="resources/img/like.png" alt="Like" >
+                        </button>
+                    </div>
                     <div class="action-container">
                         <div class="change-post">
                             <button class="change-post-button">
@@ -73,19 +65,40 @@ class View {
                                 <img class="delete-icon" src="resources/img/delete.png" alt="Delete post" >
                             </button>
                         </div>
-                    </div>`;
+                    </div>
+                </div>
+            </div>
+        </div>`;
+
+        return postContainer;
+    }
+
+    pressLike(postId) {
+        if(this._user) {
+            const username = this._user.username;
+            const post = window.postsCollection.get(postId);
+            const likeIndex = post.likes.indexOf(username);
+            if (likeIndex === -1) {
+                post.likes.push(username);
+                this.addDeleteLike(postId);
+            } else {
+                post.likes.splice(likeIndex, 1);
+                this.addDeleteLike(postId);
             }
         }
+    }
 
-        actionArea.insertAdjacentHTML('afterBegin', `
-                    <div class="like">
-                        <button class="like-button">
-                            <img class="add-like" src=${likeImg} alt="Like" >
-                        </button>
-                    </div>`);
-
-        postContainer.append(actionArea);
-        return postContainer;
+    addDeleteLike(postId){
+        const username = this._user.username;
+        const post = window.postsCollection.get(postId);
+        const article = document.getElementById(post.id);
+        let like = article.getElementsByClassName('add-like').item(0);
+        if (post.likes.indexOf(username) !== -1) {
+            like.src = "resources/img/red_like.png";
+        }
+        else{
+            like.src = "resources/img/like.png";
+        }
     }
 
 
@@ -93,61 +106,30 @@ class View {
         let postToDelete = document.getElementById(postId);
         if (window.postsCollection.remove(postId)) {
             postToDelete.remove();
-        } else {
-            alert(`No post with this id = ${postId}`);
         }
 
     }
 
     editPost(postId, changes) {
         if (window.postsCollection.edit(postId, changes)) {
-            let postToEdit = document.getElementById(postId);
-            let tags = '';
-            window.postsCollection.get(postId).tags.forEach(tag => tags += tag + ' ');
+            const post = window.postsCollection.get(postId);
+            const tags = post.tags.join(' ');
 
             if (changes.description) {
-                let description = postToEdit.getElementsByClassName('post-text')[0];
+                let description = post.getElementsByClassName('post-text')[0];
                 description.innerHTML = `<p>${changes.description}<br>${tags}</p>`;
             }
 
-            let photoLink = postToEdit.getElementsByClassName('user-photo')[0];
+            let photoLink = post.getElementsByClassName('user-photo')[0];
             photoLink.src = window.postsCollection.get(postId).photoLink;
         }
     }
 
-    createAddPostArea() {
-        if (this._user) {
-            let postMaker = document.createElement('div');
-            postMaker.className = 'make-new-post-area';
-            postMaker.innerHTML = `
-        <form>
-            <div class="column-1">
-                <img class="user-photo" src=${this._user.photoLink} alt="User photo">
-            </div>
-
-            <div class="column-2">
-                <div class="post-text">
-                    <label>
-                        <textarea class="new-post-textarea" placeholder="The text of your post..."
-                                  maxlength="280" spellcheck="true"></textarea>
-                    </label>
-                </div>
-                <div class="action-area">
-                    <div class="add-photo-area">
-                        <a href="#" class="upload-a-photo" title="Upload Photo">
-                            <img class="add-photo" src="resources/img/add-image.png" alt="Add photo">
-                        </a>
-                    </div>
-                    <div class="add-new-post">
-                        <button class="add-post-button"><strong>Add</strong></button>
-                    </div>
-                </div>
-            </div>
-        </form>
-`;
-            document.getElementsByClassName('posts-container')[0].prepend(postMaker);
-        }
+    setIcon() {
+        let userIcon = document.getElementsByClassName('user-photo')[0];
+        userIcon.src = this._user.photoLink;
     }
+
 }
 
 (() => {

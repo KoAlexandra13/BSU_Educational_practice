@@ -69,19 +69,20 @@ footer {
     margin-top: 8px;
 }
 
-#logo{
+#logo {
     width: 180px;
     padding-right: 20px;
     margin-top: -17px;
 }
 
-.logo, .modal-logo{
+.logo, .modal-logo {
     width: 180px;
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
 }
-.modal-text{
+
+.modal-text {
     margin-top: auto;
     margin-bottom: auto;
     font-family: "Times New Roman", serif;
@@ -90,11 +91,15 @@ footer {
 
 main {
     max-width: 1300px;
-    margin: 60px auto 80px;
+    margin: 60px auto 10px;
     padding-top: 50px;
     width: 90%;
     overflow: hidden;
     box-sizing: border-box;
+}
+
+.load-more-posts {
+    margin-bottom: 25px;
 }
 
 footer .footer-content {
@@ -110,6 +115,7 @@ footer .footer-content {
     padding: 0.5rem;
     width: 97%;
     border: 1px solid deepskyblue;
+    display: none;
 }
 
 .column-1, .column-2, .column-with-user-photo {
@@ -138,12 +144,17 @@ footer .footer-content {
     margin-top: -3%;
 }
 
+#add-new-post {
+    width: 95%;
+    margin-top: 1%;
+}
+
 .user-photo {
     border-radius: 50%;
     width: 80px;
 }
 
-.new-post-textarea {
+.new-post-textarea, .tags-area {
     resize: none;
     overflow: hidden;
     background-color: white;
@@ -155,18 +166,29 @@ footer .footer-content {
     font-style: italic;
 }
 
+.active {
+    display: block;
+}
+
 .add-new-post {
     width: 70px;
     margin-left: auto;
     margin-top: 5px;
 }
 
-.add-post-button{
+.add-post-button {
     height: 103%;
 }
-.sign-in-button, #header-button{
+
+.sign-in-button, #header-button {
     height: 27px;
     width: 90px;
+}
+
+.sign-in-warning {
+    text-align: center;
+    color: red;
+    display: none;
 }
 
 .add-post-button, .load-more-button, .apply-button, .sign-in-button, .sign-in-modal-button {
@@ -253,14 +275,19 @@ article {
 
 .add-like {
     width: 20px;
-    padding-left: 95px;
+    padding-left: 7px;
     opacity: 100%;
     margin-bottom: auto;
 }
 
+
 .action-container {
-    display: flex;
+    display: none;
     margin-left: auto;
+}
+
+.active-action-container {
+    display: flex;
 }
 
 .post-info {
@@ -303,12 +330,12 @@ article {
     margin-top: 6%;
 }
 
-.username-input-div, .password-input-div, h1{
+.username-input-div, .password-input-div, h1 {
     text-align: center;
     margin-top: 5%;
 }
 
-.password, .username-input{
+.password, .username-input {
     height: 25px;
     border-radius: 5px;
     resize: none;
@@ -333,6 +360,7 @@ article {
     transform: scale(1.1);
     transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
+
 .modal-content {
     position: absolute;
     top: 50%;
@@ -343,6 +371,7 @@ article {
     width: 24rem;
     border-radius: 0.5rem;
 }
+
 .close {
     float: right;
     width: 1.5rem;
@@ -352,9 +381,11 @@ article {
     border-radius: 0.25rem;
     background-color: lightgray;
 }
+
 .close:hover {
     background-color: darkgray;
 }
+
 .show-modal {
     opacity: 1;
     visibility: visible;
