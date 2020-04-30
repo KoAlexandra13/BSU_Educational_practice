@@ -37,7 +37,7 @@ class UsersCollection {
         this._users = (initialUsers || []);
     }
 
-    setUser(username, password) {
+    getUser(username, password) {
         return this._users.find(user => (user.username === username && user.password === password));
     }
 

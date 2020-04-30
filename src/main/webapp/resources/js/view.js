@@ -1,34 +1,39 @@
 class View {
     constructor(user) {
-        this._user = user;
+        this.user = user;
     }
 
     changeUser(user) {
-        this._user = user;
+        this.user = user;
+    }
+
+    isUserSetUp() {
+        return !(this.user === undefined);
     }
 
     createHeader() {
         const user = document.getElementById('username-in-header');
         const headerBtn = document.getElementById('header-button');
-        if (this._user) {
-            user.innerText = '@' + this._user.username;
+        if (this.user) {
+            user.innerText = '@' + this.user.username;
             headerBtn.innerHTML = `
                 <button class="log-out-button">
                     <img class="header-icons" src="resources/img/log-out.png" title="Log out" alt="Log out">
                 </button>`;
         } else {
+            user.innerText = '';
             headerBtn.innerHTML = `<button class="sign-in-button">Sign in</button>`;
         }
     }
 
-    buildPost(post) {
+    buildPostHTML(post) {
         const postCreateAt = post.createAt.getHours() + ':' + ('0' + post.createAt.getMinutes()).slice(-2) + ' '
             + post.createAt.getDate() + '.' + ('0' + (post.createAt.getMonth() + 1)).slice(-2)
             + '.' + post.createAt.getFullYear();
         let postTags = '';
         post.tags.forEach(tag => postTags += tag + ' ');
 
-        let postContainer = document.createElement('article');
+        const postContainer = document.createElement('article');
         postContainer.id = post.id;
         postContainer.innerHTML = `
         <div class="column-with-user-photo">
@@ -75,8 +80,8 @@ class View {
     }
 
     pressLike(postId) {
-        if(this._user) {
-            const username = this._user.username;
+        if (this.user) {
+            const username = this.user.username;
             const post = window.postsCollection.get(postId);
             const likeIndex = post.likes.indexOf(username);
             if (likeIndex === -1) {
@@ -89,26 +94,24 @@ class View {
         }
     }
 
-    addDeleteLike(postId){
-        const username = this._user.username;
+    addDeleteLike(postId) {
+        const username = this.user.username;
         const post = window.postsCollection.get(postId);
         const article = document.getElementById(post.id);
         let like = article.getElementsByClassName('add-like').item(0);
         if (post.likes.indexOf(username) !== -1) {
             like.src = "resources/img/red_like.png";
-        }
-        else{
+        } else {
             like.src = "resources/img/like.png";
         }
     }
 
 
     removePost(postId) {
-        let postToDelete = document.getElementById(postId);
+        const postToDelete = document.getElementById(postId);
         if (window.postsCollection.remove(postId)) {
             postToDelete.remove();
         }
-
     }
 
     editPost(postId, changes) {
@@ -121,14 +124,38 @@ class View {
                 description.innerHTML = `<p>${changes.description}<br>${tags}</p>`;
             }
 
-            let photoLink = post.getElementsByClassName('user-photo')[0];
+            const photoLink = post.getElementsByClassName('user-photo')[0];
             photoLink.src = window.postsCollection.get(postId).photoLink;
         }
     }
 
     setIcon() {
-        let userIcon = document.getElementsByClassName('user-photo')[0];
-        userIcon.src = this._user.photoLink;
+        const userIcon = document.getElementsByClassName('user-photo')[0];
+        userIcon.src = this.user.photoLink;
+    }
+
+    createPageView(firstPost, postNumberToLoad) {
+        window.view.createHeader();
+        if (this.isUserSetUp()) {
+            window.view.setIcon();
+        }
+        this.destroyPosts();
+        this.createPosts(firstPost, postNumberToLoad);
+    }
+
+    createPosts(firstPost, postNumberToLoad){
+        let postsToLoad = window.postsCollection.getPage(firstPost, postNumberToLoad);
+        const containerEl = document.getElementById('posts-area');
+        postsToLoad.forEach((post) => {
+            containerEl.appendChild(window.view.buildPostHTML(post));
+        });
+    }
+
+    destroyPosts(){
+        const postArea = document.getElementById('posts-area');
+        while (postArea.firstChild) {
+            postArea.removeChild(postArea.firstChild);
+        }
     }
 
 }

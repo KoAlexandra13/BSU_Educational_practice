@@ -1,5 +1,12 @@
 class Modals {
-    buildSingInModal() {
+    closeModal(modal){
+        let closeBtn = document.querySelector('.close');
+        modal.classList.toggle('show-modal');
+        closeBtn.addEventListener('click', toggleModal);
+        window.addEventListener('click', windowOnClick);
+    }
+
+    createSingInModal() {
         let modal = document.getElementsByClassName('modal').item(0);
         modal.innerHTML = `
         <div class="modal-content">
@@ -26,10 +33,7 @@ class Modals {
         </div>`;
 
         let modalSignInBtn = document.querySelector('.sign-in-modal-button');
-        let closeBtn = document.querySelector('.close');
-        modal.classList.toggle('show-modal');
-        closeBtn.addEventListener('click', toggleModal);
-        window.addEventListener('click', windowOnClick);
+        window.modals.closeModal(modal);
         modalSignInBtn.addEventListener('click', readInputFields);
     }
 
@@ -45,10 +49,7 @@ class Modals {
           </div>`;
 
         let yesBtn = document.querySelector('.sign-in-modal-button');
-        let closeBtn = document.querySelector('.close');
-        modal.classList.toggle('show-modal');
-        closeBtn.addEventListener('click', toggleModal);
-        window.addEventListener('click', windowOnClick);
+        window.modals.closeModal(modal);
         yesBtn.addEventListener('click', () => {
             window.view.removePost(postId);
             let modalContent = document.getElementsByClassName('modal-content').item(0);
@@ -58,6 +59,29 @@ class Modals {
     }
 
     buildEditModal(){
+
+    }
+
+    createLogOutModal(){
+        let modal = document.getElementsByClassName('modal').item(0);
+        modal.innerHTML = ` 
+         <div class="modal-content">
+                <span class="close">×</span>
+                <h1 class="modal-text">Are you sure you want out?</h1>
+                <div class="load-more-posts">
+                    <button class="sign-in-modal-button"><strong>Yes</strong></button>
+                </div>
+          </div>`;
+
+        let yesBtn = document.querySelector('.sign-in-modal-button');
+        window.modals.closeModal(modal);
+        yesBtn.addEventListener('click', () => {
+            window.view.changeUser();
+            makePage();
+            let modalContent = document.getElementsByClassName('modal-content').item(0);
+            modalContent.remove();
+            toggleModal();
+        });
 
     }
 }

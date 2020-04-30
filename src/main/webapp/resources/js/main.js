@@ -207,19 +207,9 @@ posts = [
     },
 ];
 
+let loadingPostsNumber = 10;
 window.postsCollection.addAll(posts);
-window.view.createHeader();
 
-let postsToLoad = window.postsCollection.getPage(0, 10);
-const containerEl = document.querySelector('.posts-container');
-postsToLoad.forEach((post) => {
-    containerEl.appendChild(window.view.buildPost(post));
-});
-setUser({
-    username: 'username',
-    password: '1111',
-    photoLink: 'resources/photos/user-photo.jpg',
-    postsId: ['1', '4', '6', '8', '13', '16']
-});
+makePage(0, loadingPostsNumber);
 
 

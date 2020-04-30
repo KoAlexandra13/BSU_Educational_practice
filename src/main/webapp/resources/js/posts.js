@@ -32,7 +32,7 @@ class PostsCollection {
         let filterPosts = this._filter(filterParams);
         filterPosts.sort(CREATION_COMPARATOR);
 
-        return filterPosts.slice(current, step - current);
+        return filterPosts.slice(current, step + current);
     }
 
     get(id) {
