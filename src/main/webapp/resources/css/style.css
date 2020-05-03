@@ -115,7 +115,6 @@ footer .footer-content {
     padding: 0.5rem;
     width: 97%;
     border: 1px solid deepskyblue;
-    display: none;
 }
 
 .column-1, .column-2, .column-with-user-photo {
@@ -154,7 +153,7 @@ footer .footer-content {
     width: 80px;
 }
 
-.new-post-textarea, .tags-area {
+#new-post-textarea, #tags-area {
     resize: none;
     overflow: hidden;
     background-color: white;
@@ -249,6 +248,10 @@ fieldset {
     display: none;
 }
 
+.filter-container.display{
+    display: block;
+}
+
 .filter-textarea {
     resize: none;
     overflow: hidden;
@@ -282,7 +285,6 @@ article {
 
 
 .action-container {
-    display: none;
     margin-left: auto;
 }
 

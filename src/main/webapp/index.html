@@ -23,51 +23,10 @@
 </header>
 
 <main class="posts-container">
-    <div class="make-new-post-area">
-        <form>
-            <div class="column-with-user-photo">
-                <img class="user-photo" src="resources/photos/default_user_photo.png" alt="User photo" >
-            </div>
-
-            <div class="column-2">
-                <div id="add-new-post">
-                    <label>
-                        <textarea class="new-post-textarea" placeholder="The text of your post..."
-                                      maxlength="280" spellcheck="true"></textarea>
-                        <textarea class="tags-area" placeholder="Your tags..."></textarea>
-                    </label>
-                </div>
-                <div class="action-area">
-                    <div class="add-photo-area">
-                        <a href="#" class="upload-a-photo" title="Upload a Photo">
-                            <img class="add-photo" src="resources/img/add-image.png" alt="Add photo" >
-                        </a>
-                    </div>
-                    <div class="add-new-post">
-                        <button class="add-post-button"><strong>Add</strong></button>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+    <div id="add-post-container"></div>
 
     <div class="filter-area">
         <div class="filter-content">
-            <form>
-                <label>
-                    <fieldset>
-                        <legend>Filter by...</legend>
-                        <div class="filter-container" id="filter">
-                            <textarea class="filter-textarea" id="author" placeholder=" username"></textarea>
-                            <textarea class="filter-textarea" id="tags" placeholder=" #tag #tag"></textarea>
-                            <textarea class="filter-textarea" id="createAt" placeholder=" dd-mm-yyyy"></textarea>
-                            <div>
-                                <button class="apply-button">Apply</button>
-                            </div>
-                        </div>
-                    </fieldset>
-                </label>
-            </form>
         </div>
     </div>
 
@@ -93,6 +52,6 @@
 <script src="resources/js/modals.js"></script>
 <script src="resources/js/view.js"></script>
 <script src="resources/js/pageEvents.js"></script>
-<script src="resources/js/main.js"></script>
+<script src="resources/js/tests.js"></script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package service;
 
+import serializer.TweetSerializer;
 import tweets.Tweet;
 
 import java.util.ArrayList;
@@ -46,7 +47,7 @@ public class TweetService implements BaseService{
     }
 
     public Tweet add(Map<String, Object> tweetToAdd) throws ClassNotFoundException, IllegalAccessException {
-        if (!Tweet.isValid(tweetToAdd)) {
+        if (!new TweetSerializer(tweetToAdd).isValid()) {
             return null;
         }
 
@@ -64,7 +65,7 @@ public class TweetService implements BaseService{
         List<Map<String, Object>> addedTweets = new ArrayList<>();
 
         tweetsToAdd.forEach(tweet -> {
-            if (Tweet.isValid(tweet)) {
+            if (new TweetSerializer(tweet).isValid()) {
                 try {
                     Tweet addedTweet = this.add(tweet);
                     if (addedTweet != null) {
@@ -122,7 +123,7 @@ public class TweetService implements BaseService{
         for (Tweet tweet : tweets) {
             if (tweet.id.equals(tweetId)){
                 Tweet changedTweet = tweet.change(changes);
-                if(Tweet.isValid(changedTweet.toMap())){
+                if(new TweetSerializer(changedTweet).isValid()){
                     remove(tweetId);
                     tweets.add(changedTweet);
                     return true;

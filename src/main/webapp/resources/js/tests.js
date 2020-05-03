@@ -1,4 +1,4 @@
-posts = [
+window.posts = [
     {
         id: '1',
         description: `A man from Australia has a snake. He feeds it a rat with tongs. This is dangerous for the snake. 
@@ -204,12 +204,42 @@ posts = [
         photoLink: 'resources/photos/fish.jpg',
         tags: ['#Finland'],
         likes: ['bid_panda', 'dog_robbi', 'username', 'japan_fish']
+    }
+];
+
+let users = [
+    {
+        username: 'username',
+        password: '1111',
+        photoLink: 'resources/photos/user-photo.jpg'
     },
+    {
+        username: 'dog_robbi',
+        password: '2222',
+        photoLink: 'resources/photos/dog.jpg'
+    },
+    {
+        username: 'japan_fish',
+        password: '3333',
+        photoLink: 'resources/photos/fish.jpg'
+    },
+    {
+        username: 'big_panda',
+        password: '4444',
+        photoLink: 'resources/photos/panda.jpg'
+    },
+    {
+        username: 'cute_koala',
+        password: '5555',
+        photoLink: 'resources/photos/koala.jpg'
+    }
+
 ];
 
 let loadingPostsNumber = 10;
-window.postsCollection.addAll(posts);
 
+window.postsCollection.addAll(posts);
+window.usersCollection.addAll(users);
 makePage(0, loadingPostsNumber);
 
 

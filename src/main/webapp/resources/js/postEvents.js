@@ -23,9 +23,21 @@ class PostEvents {
         if (editPost) {
             editPost.addEventListener('click',
                 evt => {
-                    window.view.editPost(postId);
+                    //window.view.editPost(postId);
                     evt.stopPropagation();
                 })
+        }
+    }
+
+    setNewPostEventListener(postAreaElement){
+        const add = postAreaElement.getElementsByTagName("form").item(0);
+        if (add) {
+            add.addEventListener('submit',
+                evt => {
+                    addNewPost();
+                    evt.stopPropagation();
+                }
+            );
         }
     }
 }

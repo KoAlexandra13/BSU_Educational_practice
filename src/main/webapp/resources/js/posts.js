@@ -41,6 +41,7 @@ class PostsCollection {
 
     add(newPost) {
         if (PostsCollection.validate(newPost)) {
+
             if (this._posts.find(post => post.id === newPost.id)) {
                 return false;
             }
@@ -72,11 +73,11 @@ class PostsCollection {
     }
 
     static validate(post) {
-        return (post.id && (typeof post.id === "string") && post.id !== '' &&
+        return post.id && (typeof post.id === "string") && post.id !== '' &&
             post.description && (typeof post.description === "string") && post.description !== '' &&
             post.description.length < 200 && post.author && (typeof post.id === "string") && post.author !== '' &&
             (post.createAt instanceof Date) && (typeof post.photoLink === "string") && (post.tags instanceof Array) &&
-            (post.likes instanceof Array));
+            (post.likes instanceof Array);
     }
 
     clear() {

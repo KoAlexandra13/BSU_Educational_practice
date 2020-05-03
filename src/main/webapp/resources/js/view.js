@@ -1,14 +1,23 @@
 class View {
     constructor(user) {
         this.user = user;
+        this.filter = {};
     }
 
     changeUser(user) {
         this.user = user;
     }
 
+    setFilter(newFilter){
+        this.filter = newFilter;
+    }
+
+    resetFilter(){
+        window.view.setFilter({});
+    }
+
     isUserSetUp() {
-        return !(this.user === undefined);
+        return !!this.user;
     }
 
     createHeader() {
@@ -26,12 +35,17 @@ class View {
         }
     }
 
-    buildPostHTML(post) {
-        const postCreateAt = post.createAt.getHours() + ':' + ('0' + post.createAt.getMinutes()).slice(-2) + ' '
-            + post.createAt.getDate() + '.' + ('0' + (post.createAt.getMonth() + 1)).slice(-2)
-            + '.' + post.createAt.getFullYear();
-        let postTags = '';
-        post.tags.forEach(tag => postTags += tag + ' ');
+    _formatDate(date){
+        return date.getHours() + ':' + ('0' + date.getMinutes()).slice(-2) + ' '
+            + date.getDate() + '.' + ('0' + (date.getMonth() + 1)).slice(-2)
+            + '.' + date.getFullYear();
+    }
+
+    buildPostHTML(post, username) {
+        const postCreateAt = this._formatDate(post.createAt);
+
+        const postActionContainer = this.getPostActionContainer(post, username);
+        const likeArea = this.getLikeArea(post, username);
 
         const postContainer = document.createElement('article');
         postContainer.id = post.id;
@@ -50,16 +64,24 @@ class View {
                 </div>
                 <div class="post-text">
                     <p>${post.description}<br>
-                        ${postTags}
+                        ${post.tags.join(' ')}
                     </p>
                 </div>
                 <div class="action-area">
-                    <div class="like">
-                        <button class="like-button">
-                            <img class="add-like" src="resources/img/like.png" alt="Like" >
-                        </button>
-                    </div>
-                    <div class="action-container">
+                    ${likeArea}
+                    ${postActionContainer}
+                </div>
+            </div>
+        </div>`;
+
+        window.postEvent.setPostEventListener(postContainer, post.id);
+        return postContainer;
+    }
+
+    getPostActionContainer(post, username){
+        if (post.author === username){
+            return `
+                    <div class="action-container active-action-container">
                         <div class="change-post">
                             <button class="change-post-button">
                                 <img class="change-icon" src="resources/img/add-post.png" alt="Change post" >
@@ -71,12 +93,30 @@ class View {
                             </button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>`;
+            `;
+        } else {
+            return "";
+        }
+    }
 
-        window.postEvent.setPostEventListener(postContainer, post.id);
-        return postContainer;
+    getLikeArea(post, username){
+        if (post.likes.includes(username)){
+            return `
+                <div class="like">
+                    <button class="like-button">
+                        <img class="add-like" src="resources/img/red_like.png" alt="Like" >
+                    </button>
+                </div>
+            `;
+        } else {
+            return `
+                <div class="like">
+                    <button class="like-button">
+                        <img class="add-like" src="resources/img/like.png" alt="Like" >
+                    </button>
+                </div>
+            `
+        }
     }
 
     pressLike(postId) {
@@ -86,15 +126,15 @@ class View {
             const likeIndex = post.likes.indexOf(username);
             if (likeIndex === -1) {
                 post.likes.push(username);
-                this.addDeleteLike(postId);
+                this.updateLike(postId);
             } else {
                 post.likes.splice(likeIndex, 1);
-                this.addDeleteLike(postId);
+                this.updateLike(postId);
             }
         }
     }
 
-    addDeleteLike(postId) {
+    updateLike(postId) {
         const username = this.user.username;
         const post = window.postsCollection.get(postId);
         const article = document.getElementById(post.id);
@@ -129,25 +169,17 @@ class View {
         }
     }
 
-    setIcon() {
-        const userIcon = document.getElementsByClassName('user-photo')[0];
-        userIcon.src = this.user.photoLink;
-    }
-
     createPageView(firstPost, postNumberToLoad) {
-        window.view.createHeader();
-        if (this.isUserSetUp()) {
-            window.view.setIcon();
-        }
         this.destroyPosts();
         this.createPosts(firstPost, postNumberToLoad);
     }
 
     createPosts(firstPost, postNumberToLoad){
-        let postsToLoad = window.postsCollection.getPage(firstPost, postNumberToLoad);
+        let postsToLoad = window.postsCollection.getPage(firstPost, postNumberToLoad, this.filter);
         const containerEl = document.getElementById('posts-area');
+        const username = this.user ? this.user.username : null;
         postsToLoad.forEach((post) => {
-            containerEl.appendChild(window.view.buildPostHTML(post));
+            containerEl.appendChild(window.view.buildPostHTML(post, username));
         });
     }
 
@@ -161,5 +193,5 @@ class View {
 }
 
 (() => {
-    window.view = new View();
+    window.view = new View(window.usersCollection.getUser("username", "1111"));
 })();

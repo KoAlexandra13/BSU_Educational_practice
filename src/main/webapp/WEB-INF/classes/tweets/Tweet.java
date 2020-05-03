@@ -10,7 +10,7 @@ public class Tweet {
     public LocalDateTime createAt;
     public String author;
     public String photoLink;
-    public ArrayList tags;
+    public ArrayList<String> tags;
     public List<String> likes;
 
     public Tweet(String id, String description, String author, String photoLink, ArrayList<String> tags,
@@ -41,34 +41,6 @@ public class Tweet {
         for (Field field : fields) {
             field.set(this, tweet.get(field.getName()));
         }
-    }
-
-    public static Boolean isValid(Map<String, Object> rawTweet) {
-        Field[] fields;
-        try {
-            fields = Class.forName("tweets.Tweet").getDeclaredFields();
-        } catch (ClassNotFoundException e) {
-            return false;
-        }
-
-        Set<String> keys = rawTweet.keySet();
-
-        if (fields.length != keys.size()) {
-            return false;
-        }
-
-        for (Field field : fields) {
-            if (!keys.contains(field.getName())) {
-                return false;
-            }
-
-            try {
-                field.getType().cast(rawTweet.get(field.getName()));
-            } catch (ClassCastException e) {
-                return false;
-            }
-        }
-        return true;
     }
 
     public Map<String, Object> toMap() {

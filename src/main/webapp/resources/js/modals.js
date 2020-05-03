@@ -15,26 +15,27 @@ class Modals {
                 <img class="logo" src="resources/img/logo.png" alt="Logo">
             </div>
             <h1 class="modal-text">Sign in</h1>
-            <form>
+            <form id="sign-in-form">
                 <div class="username-input-div">
                     <i class="fa fa-user fa-lg" style="color: black" aria-hidden="true"></i>
-                    <input class="username-input"  placeholder=" username">
+                    <input class="username-input" placeholder=" username">
                 </div>
     
                 <div class="password-input-div">
                     <i class="fa fa-asterisk fa-lg" style="color: black" aria-hidden="true"></i>
                     <input class="password" type="password" placeholder=" password">
                 </div>
-            </form>
             <p class="sign-in-warning">There is no such user. Try again.</p>
             <div class="load-more-posts">
-                <button class="sign-in-modal-button"><strong>Sign in</strong></button>
+                <input type="submit" class="sign-in-modal-button" value="Sign in">
             </div>
+            </form>
         </div>`;
 
-        let modalSignInBtn = document.querySelector('.sign-in-modal-button');
         window.modals.closeModal(modal);
-        modalSignInBtn.addEventListener('click', readInputFields);
+        const form = document.getElementById("sign-in-form");
+        form.onsubmit = () => {return false;};
+        form.addEventListener('submit', readInputFields);
     }
 
     buildDeleteModal(postId) {
@@ -52,10 +53,9 @@ class Modals {
         window.modals.closeModal(modal);
         yesBtn.addEventListener('click', () => {
             window.view.removePost(postId);
-            let modalContent = document.getElementsByClassName('modal-content').item(0);
-            modalContent.remove();
             toggleModal();
         });
+
     }
 
     buildEditModal(){
@@ -78,8 +78,6 @@ class Modals {
         yesBtn.addEventListener('click', () => {
             window.view.changeUser();
             makePage();
-            let modalContent = document.getElementsByClassName('modal-content').item(0);
-            modalContent.remove();
             toggleModal();
         });
 
