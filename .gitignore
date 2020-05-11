@@ -1,5 +1,4 @@
 # содержимое файла .gitignore для IDEA
-*.iml
 .DS_Store/
 out/
 *.class
