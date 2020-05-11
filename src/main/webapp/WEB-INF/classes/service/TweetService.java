@@ -46,7 +46,7 @@ public class TweetService implements BaseService{
         return filterTweets;
     }
 
-    public Tweet add(Map<String, Object> tweetToAdd) throws ClassNotFoundException, IllegalAccessException {
+    public Tweet add(Tweet tweetToAdd) throws ClassNotFoundException, IllegalAccessException {
         if (!new TweetSerializer(tweetToAdd).isValid()) {
             return null;
         }
@@ -61,15 +61,15 @@ public class TweetService implements BaseService{
         return newTweet;
     }
 
-    public List<Map<String, Object>> addAll(List<Map<String, Object>> tweetsToAdd) {
-        List<Map<String, Object>> addedTweets = new ArrayList<>();
+    public List<Tweet> addAll(List<Tweet> tweetsToAdd) {
+        List<Tweet> addedTweets = new ArrayList<>();
 
         tweetsToAdd.forEach(tweet -> {
             if (new TweetSerializer(tweet).isValid()) {
                 try {
                     Tweet addedTweet = this.add(tweet);
                     if (addedTweet != null) {
-                        addedTweets.add(addedTweet.toMap());
+                        addedTweets.add(addedTweet);
                     }
                 } catch (ClassNotFoundException | IllegalAccessException e) {
                     e.printStackTrace();
@@ -79,20 +79,20 @@ public class TweetService implements BaseService{
         return addedTweets;
     }
 
-    public Map<String, Object> remove(String tweetId) {
+    public Tweet remove(String tweetId) {
         List<Tweet> elementsToRemove = tweets.stream().filter(tweet -> tweet.id.equals(tweetId)).collect(Collectors.toList());
         tweets.removeAll(elementsToRemove);
         if (elementsToRemove.size() > 0) {
-            return elementsToRemove.get(0).toMap();
+            return elementsToRemove.get(0);
         } else {
             return null;
         }
     }
 
-    public Map<String, Object> get(String tweetId) {
+    public Tweet get(String tweetId) {
         for (Tweet tweet : tweets) {
             if (tweet.id.equals(tweetId))
-                return tweet.toMap();
+                return tweet;
         }
         return null;
     }
@@ -119,7 +119,7 @@ public class TweetService implements BaseService{
         return tweetsToReturn;
     }
 
-    public Boolean editTweet(String tweetId, Map<String, Object> changes) throws NoSuchFieldException, ClassNotFoundException {
+    public boolean editTweet(String tweetId, Map<String, Object> changes) throws NoSuchFieldException, ClassNotFoundException {
         for (Tweet tweet : tweets) {
             if (tweet.id.equals(tweetId)){
                 Tweet changedTweet = tweet.change(changes);

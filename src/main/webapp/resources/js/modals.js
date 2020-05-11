@@ -58,8 +58,35 @@ class Modals {
 
     }
 
-    buildEditModal(){
+    buildEditModal(postId){
+        let modal = document.getElementsByClassName('modal').item(0);
+        let editPost = window.postsCollection.get(postId);
+        modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close">×</span>
+            <div class="modal-logo">
+                <img class="logo" src="resources/img/logo.png" alt="Logo">
+            </div>
+            <h1 class="modal-text">Sign in</h1>
+            <form id="edit-form">
+                <div id="edit-post">
+                        <label>
+                            <textarea id="edit-post-textarea" maxlength="280" spellcheck="true">${editPost.description}</textarea>
+                            <textarea id="tags-area">${editPost.join(' ')}</textarea>
+                        </label>
+                    </div>
+            <div class="load-more-posts">
+                <input type="submit" class="edit-modal-button" value="Sign in">
+            </div>
+            </form>
+        </div>`;
 
+        window.modals.closeModal(modal);
+        const form = document.getElementById("edit-form");
+        form.onsubmit = () => {return false;};
+        form.addEventListener('submit', () => {
+
+        });
     }
 
     createLogOutModal(){

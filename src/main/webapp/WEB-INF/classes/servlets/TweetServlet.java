@@ -26,7 +26,7 @@ public class TweetServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String id = req.getParameter("id");
-        Map<String, Object> tweet = this.service.get(id);
+        Tweet tweet = this.service.get(id);
 
         if (tweet == null) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
@@ -63,7 +63,7 @@ public class TweetServlet extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
-        Map<String, Object> removedTweet = this.service.remove(id);
+        Tweet removedTweet = this.service.remove(id);
 
         JSONObject jsonObject = new JSONObject(removedTweet);
 
