@@ -43,18 +43,6 @@ public class Tweet {
         }
     }
 
-    public Map<String, Object> toMap() {
-        Map<String, Object> map = new HashMap<>();
-        map.put("id", this.id);
-        map.put("description", this.description);
-        map.put("createAt", this.createAt);
-        map.put("photoLink", this.photoLink);
-        map.put("author", this.author);
-        map.put("tags", this.tags);
-        map.put("likes", this.likes);
-        return map;
-    }
-
     public Boolean match(Map<String, Object> filterConfig) throws NoSuchFieldException, ClassNotFoundException {
         Set<String> keys = filterConfig.keySet();
         for (String key : keys) {

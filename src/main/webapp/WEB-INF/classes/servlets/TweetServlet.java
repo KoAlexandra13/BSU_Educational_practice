@@ -2,6 +2,7 @@ package servlets;
 
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
+import serializer.TweetSerializer;
 import service.BaseService;
 import service.TweetService;
 import tweets.Tweet;
@@ -31,7 +32,8 @@ public class TweetServlet extends HttpServlet {
         if (tweet == null) {
             resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
         } else {
-            JSONObject jsonObject = new JSONObject(tweet);
+            System.out.println(tweet);
+            JSONObject jsonObject = new JSONObject(new TweetSerializer(tweet).asMap());
 
             resp.setStatus(HttpServletResponse.SC_OK);
             resp.setContentType("application/json");
@@ -52,7 +54,7 @@ public class TweetServlet extends HttpServlet {
         List<Tweet> tweets = this.service.getPage(0,10, config);
 
         for (Tweet tweet : tweets) {
-            responseList.add(new JSONObject(tweet.toMap()));
+            responseList.add(new JSONObject(new TweetSerializer(tweet).asMap()));
         }
 
         resp.setStatus(HttpServletResponse.SC_OK);
@@ -65,7 +67,7 @@ public class TweetServlet extends HttpServlet {
         String id = req.getParameter("id");
         Tweet removedTweet = this.service.remove(id);
 
-        JSONObject jsonObject = new JSONObject(removedTweet);
+        JSONObject jsonObject = new JSONObject(new TweetSerializer(removedTweet).asMap());
 
         resp.setStatus(HttpServletResponse.SC_OK);
         resp.setContentType("application/json");
