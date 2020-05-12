@@ -1,0 +1,1 @@
+ SELECT * FROM posts order by CREATED_AT DESC;

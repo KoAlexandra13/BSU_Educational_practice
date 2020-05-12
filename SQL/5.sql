@@ -1,0 +1,1 @@
+SELECT u.USER_ID, u.NAME, count(*)'posts number' FROM user u join posts p on p.USER_ID = u.USER_ID group by NAME having count(*) > 3;
