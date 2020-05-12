@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Educational practice:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4d0de3cb-a7fe-4c95-8497-a8ffb6ba2a0e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Educational_practice_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Educational practice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Educational practice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/serializer/Serializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/serializer/Serializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/servlets/TweetServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/servlets/TweetServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/tweets/Tweet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/tweets/Tweet.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="1bhyOcZBA08QXmXItJOQJm0pzEA" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 8.5.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.51" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Educational practice:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_Educational_practice_5" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50688" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Educational practice:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d0de3cb-a7fe-4c95-8497-a8ffb6ba2a0e" name="Default Changelist" comment="" />
+      <created>1589098588652</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589098588652</updated>
+      <workItem from="1589098593080" duration="632000" />
+      <workItem from="1589112837333" duration="9000" />
+      <workItem from="1589204455714" duration="28000" />
+      <workItem from="1589205258619" duration="168000" />
+      <workItem from="1589206690209" duration="327000" />
+      <workItem from="1589207042878" duration="338000" />
+      <workItem from="1589218466227" duration="269000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="233" y="3" key="#Project_Structure" timestamp="1589206950452">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="233" y="3" key="#Project_Structure/0.0.1280.689@0.0.1280.689" timestamp="1589206950452" />
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589206926672">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1589206926672" />
+    <state x="316" y="54" key="FileChooserDialogImpl" timestamp="1589206918131">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="316" y="54" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1589206918131" />
+    <state width="845" height="206" key="GridCell.Tab.0.bottom" timestamp="1589207382165">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1589207382165" />
+    <state width="845" height="206" key="GridCell.Tab.0.center" timestamp="1589207382164">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1589207382164" />
+    <state width="845" height="206" key="GridCell.Tab.0.left" timestamp="1589207382164">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1589207382164" />
+    <state width="845" height="206" key="GridCell.Tab.0.right" timestamp="1589207382164">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1589207382164" />
+    <state width="845" height="206" key="GridCell.Tab.1.bottom" timestamp="1589207382167">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1589207382167" />
+    <state width="845" height="206" key="GridCell.Tab.1.center" timestamp="1589207382166">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1589207382166" />
+    <state width="845" height="206" key="GridCell.Tab.1.left" timestamp="1589207382165">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1589207382165" />
+    <state width="845" height="206" key="GridCell.Tab.1.right" timestamp="1589207382167">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1589207382167" />
+    <state width="845" height="206" key="GridCell.Tab.2.bottom" timestamp="1589207382167">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.2.bottom/0.0.1280.689@0.0.1280.689" timestamp="1589207382167" />
+    <state width="845" height="206" key="GridCell.Tab.2.center" timestamp="1589207382167">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.2.center/0.0.1280.689@0.0.1280.689" timestamp="1589207382167" />
+    <state width="845" height="206" key="GridCell.Tab.2.left" timestamp="1589207382167">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.2.left/0.0.1280.689@0.0.1280.689" timestamp="1589207382167" />
+    <state width="845" height="206" key="GridCell.Tab.2.right" timestamp="1589207382167">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="845" height="206" key="GridCell.Tab.2.right/0.0.1280.689@0.0.1280.689" timestamp="1589207382167" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Educational_practice$Tomcat_8_5_51.ic" NAME="Tomcat 8.5.51 Coverage Results" MODIFIED="1589206967496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

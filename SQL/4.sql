@@ -1,0 +1,1 @@
+SELECT NAME FROM user group by NAME; #In fact, field NAME unique
