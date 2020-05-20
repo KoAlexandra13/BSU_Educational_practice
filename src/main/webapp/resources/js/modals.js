@@ -64,19 +64,16 @@ class Modals {
         modal.innerHTML = `
         <div class="modal-content">
             <span class="close">×</span>
-            <div class="modal-logo">
-                <img class="logo" src="resources/img/logo.png" alt="Logo">
-            </div>
-            <h1 class="modal-text">Sign in</h1>
+            <h1 class="modal-text">Edit your post</h1>
             <form id="edit-form">
                 <div id="edit-post">
                         <label>
                             <textarea id="edit-post-textarea" maxlength="280" spellcheck="true">${editPost.description}</textarea>
-                            <textarea id="tags-area">${editPost.join(' ')}</textarea>
+                            <textarea id="edit-tags-area">${editPost.tags.join(' ')}</textarea>
                         </label>
                     </div>
             <div class="load-more-posts">
-                <input type="submit" class="edit-modal-button" value="Sign in">
+                <input type="submit" class="edit-modal-button" value="Edit">
             </div>
             </form>
         </div>`;
@@ -85,7 +82,14 @@ class Modals {
         const form = document.getElementById("edit-form");
         form.onsubmit = () => {return false;};
         form.addEventListener('submit', () => {
-
+            const editPostDescription = document.getElementById('edit-post-textarea').value;
+            const editPostTags = document.getElementById('edit-tags-area').value.split(' ');
+            const changes = {
+                description : editPostDescription,
+                tags : editPostTags
+            };
+            window.view.editPost(postId, changes);
+            toggleModal();
         });
     }
 

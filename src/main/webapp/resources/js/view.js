@@ -131,6 +131,7 @@ class View {
                 post.likes.splice(likeIndex, 1);
                 this.updateLike(postId);
             }
+            window.postsCollection.save();
         }
     }
 
@@ -158,13 +159,14 @@ class View {
         if (window.postsCollection.edit(postId, changes)) {
             const post = window.postsCollection.get(postId);
             const tags = post.tags.join(' ');
+            const postDOM = document.getElementById(postId);
 
             if (changes.description) {
-                let description = post.getElementsByClassName('post-text')[0];
+                const description = postDOM.getElementsByClassName('post-text').item(0);
                 description.innerHTML = `<p>${changes.description}<br>${tags}</p>`;
             }
 
-            const photoLink = post.getElementsByClassName('user-photo')[0];
+            const photoLink = postDOM.getElementsByClassName('user-photo')[0];
             photoLink.src = window.postsCollection.get(postId).photoLink;
         }
     }

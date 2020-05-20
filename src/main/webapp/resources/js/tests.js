@@ -242,4 +242,3 @@ window.postsCollection.addAll(posts);
 window.usersCollection.addAll(users);
 makePage(0, loadingPostsNumber);
 
-

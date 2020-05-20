@@ -1,5 +1,6 @@
 # содержимое файла .gitignore для IDEA
 .DS_Store/
+.idea
 out/
 *.class
 # Maven build dir

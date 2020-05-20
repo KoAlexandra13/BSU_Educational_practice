@@ -46,6 +46,7 @@ class PostsCollection {
                 return false;
             }
             this._posts.push(newPost);
+            this.save();
             return true;
         }
     }
@@ -57,6 +58,7 @@ class PostsCollection {
             this._changePost(changedPost, changes);
             if (PostsCollection.validate(changedPost)) {
                 this._posts.splice(postIndex, 1, changedPost);
+                this.save();
                 return true;
             }
         }
@@ -67,6 +69,7 @@ class PostsCollection {
         let i = this._posts.findIndex(post => post.id === id);
         if (i !== -1) {
             this._posts.splice(i, 1);
+            this.save();
             return true;
         }
         return false;
@@ -82,10 +85,25 @@ class PostsCollection {
 
     clear() {
         this._posts = [];
+        this.save();
     }
 
     addAll(postsArray) {
         return postsArray.filter((post) => !this.add(post));
+    }
+
+    save(){
+        localStorage.removeItem("posts");
+        localStorage.setItem("posts", JSON.stringify(this._posts));
+    }
+
+    restore(){
+        const postsStr = localStorage.getItem("posts");
+        const posts = JSON.parse(postsStr);
+        posts.forEach(post => {
+            post.createAt = new Date(post.createAt);
+        });
+        this._posts = posts;
     }
 }
 

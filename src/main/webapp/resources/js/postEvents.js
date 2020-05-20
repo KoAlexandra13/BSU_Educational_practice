@@ -23,7 +23,7 @@ class PostEvents {
         if (editPost) {
             editPost.addEventListener('click',
                 evt => {
-                    //window.view.editPost(postId);
+                    window.modals.buildEditModal(postId);
                     evt.stopPropagation();
                 })
         }

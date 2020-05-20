@@ -100,6 +100,7 @@ function windowOnClick(event) {
     if (event.target === modal) {
         toggleModal();
     }
+
 }
 
 function makePage(firstPostNumber, postNumber) {
@@ -114,6 +115,7 @@ function makePage(firstPostNumber, postNumber) {
         let signInBtn = document.querySelector('.sign-in-button');
         signInBtn.addEventListener('click', window.modals.createSingInModal);
     }
+    window.postsCollection.restore();
 }
 
 function readInputFields() {

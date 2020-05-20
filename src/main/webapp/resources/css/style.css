@@ -153,7 +153,7 @@ footer .footer-content {
     width: 80px;
 }
 
-#new-post-textarea, #tags-area {
+#new-post-textarea, #tags-area, #edit-post-textarea, #edit-tags-area {
     resize: none;
     overflow: hidden;
     background-color: white;
@@ -163,6 +163,10 @@ footer .footer-content {
     color: gray;
     font-family: "Arial", serif;
     font-style: italic;
+}
+#edit-post-textarea {
+    height: 100px;
+    margin-top: 5px;
 }
 
 .active {
@@ -190,7 +194,7 @@ footer .footer-content {
     display: none;
 }
 
-.add-post-button, .load-more-button, .apply-button, .sign-in-button, .sign-in-modal-button {
+.add-post-button, .load-more-button, .apply-button, .sign-in-button, .sign-in-modal-button, .edit-modal-button {
     border-radius: 50px;
     width: 100%;
     border: none;
@@ -208,7 +212,7 @@ footer .footer-content {
     width: 100%;
 }
 
-.load-more-button, .sign-in-modal-button {
+.load-more-button, .sign-in-modal-button, .edit-modal-button {
     width: 20%;
     margin-top: 20px;
     height: 2em;
